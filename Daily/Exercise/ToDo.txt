@@ -1,0 +1,266 @@
+@
+
+Napi feladatok
+--------------
+- Wifi problémák megoldása
+
+
+
+Kerti munka stream
+------------------
+
+
+- kazánház rendrakás
+- madáretetõk
+
+
+
+Házi szerelés/javítás stream
+----------------------------
+- lányoknál szerelés
+  - lámpacsere
+- redõny javítása nappali/Anyukánál
+- ágycsere
+- polc
+- matrac elhelyezése
+
+
+Adminisztráció stream
+---------------------
+
+
+
+Hobby stream
+------------
+- Silence cutting UI felület készítés
+
+
+Önképzés stream
+---------------
+- Codewars TypeScript
+
+
+
+
+
+Today tasks				
+-----------
+- BMW multipanelt megkeresni
+
+
+Tanulás
+-------
+- TypeScript Deep dive
+- TypeScript Handbook átolvasás
+- codewars feladat
+- TypeScript pluralsight
+- knockout-os példák átírása typescriptre
+- codewars-hoz testprojektek hozzárakása
+- manphot elbranchelése
+- manphot átírása Typescriptre és Knockout-ra
+- református honlap támogatása
+- SaveWeather refaktorálása
+
+Adminisztráció
+--------------
+- grafikon rajzolás
+- Windows-os gép leürítése
+- régi számítógépek leürítése
+- email rendrakása kiürítése
+- Dropbox rendrakása
+- OneDrive rendrakása
+- ebookok rendezése
+- weather file-ok rendrakása
+
+Munkahely
+---------
+  - EF6
+  - Ninject
+  - Unit teszt írás Ninject-elemzése
+  - Ragnarok
+  - Plugin rendszer megismerése
+  - Deploy megtanulása
+  - Pppp megértése
+  - Chm beindítása
+
+Hobby
+-----
+- Photprep igazítása
+- Pictureprep megírása
+- result másoló/törlõ script megírása
+- Iris scriptek és manuálok git repoba töltése
+- összes kép kalibrálása
+- C-Muniwin kipróbálása/finom hangolása csillagokra
+- web-es kimérõ IIS deploy megoldása
+
+
+Elmaradt feladatok
+------------------
+- Filmletöltés megjavítása
+- WiFi megjavítása
+
+
+Balaton
+-------
+- fal vakolásának megoldása
+- festés
+- kapu akasztó
+
+Telek
+-----
+- kaszálás
+- írtás
+- száraz ágak rendezése
+- szõlõ szedése
+
+Kert - Udvar
+------------
+- tyúkok, nyúl kerítés
+- Fülinek szénarács
+- tyúkól rendbehozatala
+	- kazánház rendrakása
+- kazánház polcok felrakása
+- fûtés, fészer rendrakása
+- nyomás szabályozó
+- WC csöpögés
+- kamra rendezése
+- gyepháló füvesítése
+- nyári konyha rendrakása
+- fák felfûrészelése
+
+
+Lakás
+-----
+- anya polcok felrakása
+- ágy megvétele és cseréje
+- saját dolgok rendezése, emelet, tároló, anyukám szobája
+- képek felrakása
+- fémragasztós feladatok elvégzése
+- WC csöpögés
+- csap nyomásprobléma
+
+LMP instruktor felkeresése
+
+
+
+
+
+- pince ajtó
+- fa kivétel, mandulafa, tyúkok helyérõl a vadszilvafa kiszedése
+
+
+- Aptana kipróbálása
+
+- képek rendezése
+
+- gerinctorna
+
+
+
+Téli szüneti teendõk
+--------------------
+- sakk
+- EQ2-es mechanika javítása
+- ragasztás
+- batteryk
+- furulya tanulás
+
+- rendrakás a polcomon
+
+
+---------------------------------------------------
+
+
+- kazánházban rendrakás
+- angol nyelvû film letöltése
+
+
+- régi számítógépek leürítése
+- régi számítógépes könyvek leselejtezése
+- email-ek rendezése
+- Dropbox folder kitakarítása
+- TimeMngr fájlok konszolidálása
+- rendrakás a polcomon
+
+
+
+
+
+
+
+
+Telek
+-----
+
+Ház - Törökbálint
+-----------------
+- ereszcsatorna ürítése
+- kazánház takarítása
+- kazánház polcszerelés
+- kert ásása
+- fa ültetés
+
+- képek felrakása
+- számítógép konszolidáció
+
+Csillagászat
+------------
+- szögmérõ készítése
+- irányzék a DSLR-re
+- bolygómozgások követése
+- EQ3-as tengely cseréje
+- automatikus fotometria
+
+Pluralsight
+-----------
+Username: sandor-hadhazi-fa
+Password: Text1234
+
+Important & Urgent
+------------------
+
+- idõjárás havi átlagainak kiszámítása
+- idõjárás fájlok összeszedése
+- WebApi-s riport elkészítése
+
+Nefelejcs szövetkezet
+---------------------
+- Dávid telefonszámának elérhetõvé tétele
+- Szövetkezet számlaszámának elérhetõvé tétele
+- Közgyûlések költségeinek kifizetése
+
+- Közjegyzõ Feri és Attila
+- Feri levele
+- Vízórák
+- tûzvédelmi szabályzat megújítása
+
+- OTP lakástakarék beállítása
+- KAS számla fizetése
+
+
+- csak közgyûlési felhatalmazással lehet tisztségviselõ ellen büntetõfeljelentést tenni
+- a napirendi pontok menet közbeni változásáról az alapszabály nem rendelkezik, illetve csak a megismételt közgyûlésen lehet csak az eredetileg kiírt 
+  napirendi pontokról határozatot hozni, de a napi rendi pontok értelemszerûen egy rendes közgyûlésen is megváltozhatnak
+- a napirendi pontok megváltoztatását és a közgyûlés rendkívüliségét a NAV bevallási kötlezettség határideje indokolja
+
+
+TODO
+----
+- napi rutinok átgondolása
+- kazánház kitakarítása
+- AAVSO Bulletin
+- Befektetések ellenõrzése Excel file elkészítése
+
+
+- Buderus kémény megjavítása
+- Anyu szobájában rendrakás, régi számítógépek újratelepítése
+
+Qualysoft bemutatkozás
+----------------------
+Hadházi Sándor vagyok. Az egykori Kandó Kálmán Fõiskola Mikroelektronika szakán végeztem. Elõzõ munkahelyemen, a Dealogic Kft.-nél C# ASP.NET fejlesztõként testreszabott riportok - melyek gyakorlatilag összetettebb kisalkalmazások - készítésével foglalkoztam. A jövõben is mint programfejlesztõ szeretnék dolgozni és nyitott vagyok eddig általam kevésbé ismert technológiák felé is.
+
+Családommal, feleségemmel és három gyerekünkkel Törökbálinton élünk.
+
+Szabadidõmben szeretek mozogni, sportolni, rendszeresen járok úszni, futni valamint a családdal kerékpározni, illetve szeretek még az otthoni kertünkben is dolgozni. A ház körül van egy kölyök puli kutyánk, illetve tyúkok és nyuszi is.
+
+Régi nagy hobbym az amatörcsillagászat. Rendszeresen végzek változó csillag megfigyeléseket is, illetve tavaly végeztem egy féléves csillagászati alapképzést az ELTE csillagászati tanszékén.
