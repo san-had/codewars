@@ -18,15 +18,42 @@
 
             int lastValue = n * n;
 
+            int roundCounter = 0;
+
             MoveRightFirst(ref rowIndex, ref colIndex, ref startIndex, ref length, ref startValue, spiralData);
 
-            MoveDown(ref rowIndex, ref colIndex, ref startIndex, ref length, ref startValue, spiralData);
+            do
+            {
+                if (startValue > lastValue)
+                {
+                    break;
+                }
 
-            //MoveLeft(ref rowIndex, ref colIndex, ref startIndex, ref length, ref startValue, spiralData);
+                MoveDown(ref rowIndex, ref colIndex, roundCounter, ref length, ref startValue, spiralData);
 
-            //MoveUp(ref rowIndex, ref colIndex, ref startIndex, ref length, ref startValue, spiralData);
+                if (startValue > lastValue)
+                {
+                    break;
+                }
 
-            //MoveRight(ref rowIndex, ref colIndex, ref startIndex, ref length, ref startValue, spiralData);
+                MoveLeft(ref rowIndex, ref colIndex, roundCounter, ref length, ref startValue, spiralData);
+
+                if (startValue > lastValue)
+                {
+                    break;
+                }
+
+                MoveUp(ref rowIndex, ref colIndex, roundCounter, ref length, ref startValue, spiralData);
+
+                if (startValue > lastValue)
+                {
+                    break;
+                }
+
+                MoveRight(ref rowIndex, ref colIndex, roundCounter, ref length, ref startValue, spiralData);
+
+                roundCounter += 2;
+            } while (true);
 
             return spiralData;
         }
@@ -44,61 +71,55 @@
             colIndex--;
         }
 
-        private static void MoveDown(ref int rowIndex, ref int colIndex, ref int startIndex, ref int length, ref int startValue, int[,] spiralData)
+        private static void MoveDown(ref int rowIndex, ref int colIndex, int roundCounter, ref int length, ref int startValue, int[,] spiralData)
         {
-            rowIndex++;
-
-            int counter = length - 1;
+            int counter = length - 1 - roundCounter;
 
             while (counter > 0)
             {
-                spiralData[rowIndex, colIndex] = startValue;
-                startValue++;
                 rowIndex++;
+                spiralData[rowIndex, colIndex] = startValue;
+                startValue++;
                 counter--;
             }
         }
 
-        private static void MoveLeft(ref int rowIndex, ref int colIndex, ref int startIndex, ref int length, ref int startValue, int[,] spiralData)
+        private static void MoveLeft(ref int rowIndex, ref int colIndex, int roundCounter, ref int length, ref int startValue, int[,] spiralData)
         {
-            colIndex--;
-
-            int counter = length - 1;
+            int counter = length - 1 - roundCounter;
 
             while (counter > 0)
             {
-                spiralData[rowIndex, colIndex] = startValue;
-                startValue++;
                 colIndex--;
+                spiralData[rowIndex, colIndex] = startValue;
+                startValue++;
                 counter--;
             }
         }
 
-        private static void MoveUp(ref int rowIndex, ref int colIndex, ref int startIndex, ref int length, ref int startValue, int[,] spiralData)
+        private static void MoveUp(ref int rowIndex, ref int colIndex, int roundCounter, ref int length, ref int startValue, int[,] spiralData)
         {
-            rowIndex--;
-
-            int counter = length - 2;
+            int counter = length - 2 - roundCounter;
 
             while (counter > 0)
             {
-                spiralData[rowIndex, colIndex] = startValue;
-                startValue++;
                 rowIndex--;
+                spiralData[rowIndex, colIndex] = startValue;
+                startValue++;
                 counter--;
             }
         }
 
-        private static void MoveRight(ref int rowIndex, ref int colIndex, ref int startIndex, ref int length, ref int startValue, int[,] spiralData)
+        private static void MoveRight(ref int rowIndex, ref int colIndex, int roundCounter, ref int length, ref int startValue, int[,] spiralData)
         {
-            colIndex++;
-            int counter = length - 2;
+            int counter = length - 2 - roundCounter;
 
             while (counter > 0)
             {
+                colIndex++;
                 spiralData[rowIndex, colIndex] = startValue;
                 startValue++;
-                colIndex++;
+                counter--;
             }
         }
     }
