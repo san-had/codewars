@@ -1,8 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var countLetters_1 = require("./countLetters");
-var letterDictionary = countLetters_1.letter_count('arithmetic');
-for (var key in letterDictionary) {
-    console.log(" " + key + ": " + letterDictionary[key]);
+var spiral_1 = require("./spiral");
+var N = 3;
+var spiralData = spiral_1.create_spiral(3);
+displaySpiral(spiralData);
+function displaySpiral(spiralData) {
+    var dimension = spiralData[0].length;
+    for (var i = 0; i < dimension; i++) {
+        var row = "";
+        for (var j = 0; j < dimension; j++) {
+            row = row + " " + spiralData[i][j];
+        }
+        console.log(row);
+    }
 }
 //# sourceMappingURL=app.js.map

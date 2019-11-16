@@ -1,7 +1,20 @@
-import { letter_count } from "./countLetters";
+import { create_spiral } from "./spiral";
 
-let letterDictionary = letter_count('arithmetic');
+let N: number = 3;
 
-for(let key in letterDictionary) {
-      console.log(" " + key + ": " + letterDictionary[key]);      
+let spiralData = create_spiral(3);
+
+displaySpiral(spiralData);
+
+function displaySpiral(spiralData: number[][]) {
+    let dimension = spiralData[0].length;
+
+    for (let i = 0; i < dimension; i++) {
+        let row = "";
+        for (let j = 0; j < dimension; j++) {
+            row = row + " " + spiralData[i][j]
+        }
+        console.log(row);        
+    }
+
 }
