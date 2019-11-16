@@ -6,6 +6,11 @@
         {
             var spiralData = new int[n, n];
 
+            if (n < 1)
+            {
+                return spiralData;
+            }
+
             int rowIndex = 0;
 
             int colIndex = 0;
@@ -22,31 +27,21 @@
 
             do
             {
-                if (startValue == lastValue)
+                if (IsEnd(startValue, lastValue))
                 {
                     break;
                 }
 
                 MoveDown(ref rowIndex, ref colIndex, round, ref length, ref startValue, spiralData);
 
-                if (startValue == lastValue)
-                {
-                    break;
-                }
-
                 MoveLeft(ref rowIndex, ref colIndex, round, ref length, ref startValue, spiralData);
 
-                if (startValue == lastValue)
+                if (IsEnd(startValue, lastValue))
                 {
                     break;
                 }
 
                 MoveUp(ref rowIndex, ref colIndex, round, ref length, ref startValue, spiralData);
-
-                if (startValue == lastValue)
-                {
-                    break;
-                }
 
                 MoveRight(ref rowIndex, ref colIndex, round, ref length, ref startValue, spiralData);
 
@@ -119,6 +114,11 @@
                 spiralData[rowIndex, colIndex] = startValue;
                 counter--;
             }
+        }
+
+        private static bool IsEnd(int startValue, int lastValue)
+        {
+            return startValue == lastValue;
         }
     }
 }

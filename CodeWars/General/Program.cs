@@ -6,7 +6,7 @@ namespace General
     {
         private static void Main(string[] args)
         {
-            int N = 3;
+            int N = 4;
 
             var spiralArray = KataSpiral.CreateSpiral(N);
 
