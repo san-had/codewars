@@ -10,61 +10,59 @@
 
             int colIndex = 0;
 
-            int startIndex = 0;
-
             int length = n;
 
-            int startValue = 1;
+            int startValue = 0;
 
             int lastValue = n * n;
 
-            int roundCounter = 0;
+            int round = 0;
 
-            MoveRightFirst(ref rowIndex, ref colIndex, ref startIndex, ref length, ref startValue, spiralData);
+            MoveRightFirst(ref rowIndex, ref colIndex, ref length, ref startValue, spiralData);
 
             do
             {
-                if (startValue > lastValue)
+                if (startValue == lastValue)
                 {
                     break;
                 }
 
-                MoveDown(ref rowIndex, ref colIndex, roundCounter, ref length, ref startValue, spiralData);
+                MoveDown(ref rowIndex, ref colIndex, round, ref length, ref startValue, spiralData);
 
-                if (startValue > lastValue)
+                if (startValue == lastValue)
                 {
                     break;
                 }
 
-                MoveLeft(ref rowIndex, ref colIndex, roundCounter, ref length, ref startValue, spiralData);
+                MoveLeft(ref rowIndex, ref colIndex, round, ref length, ref startValue, spiralData);
 
-                if (startValue > lastValue)
+                if (startValue == lastValue)
                 {
                     break;
                 }
 
-                MoveUp(ref rowIndex, ref colIndex, roundCounter, ref length, ref startValue, spiralData);
+                MoveUp(ref rowIndex, ref colIndex, round, ref length, ref startValue, spiralData);
 
-                if (startValue > lastValue)
+                if (startValue == lastValue)
                 {
                     break;
                 }
 
-                MoveRight(ref rowIndex, ref colIndex, roundCounter, ref length, ref startValue, spiralData);
+                MoveRight(ref rowIndex, ref colIndex, round, ref length, ref startValue, spiralData);
 
-                roundCounter += 2;
+                round += 2;
             } while (true);
 
             return spiralData;
         }
 
-        private static void MoveRightFirst(ref int rowIndex, ref int colIndex, ref int startIndex, ref int length, ref int startValue, int[,] spiralData)
+        private static void MoveRightFirst(ref int rowIndex, ref int colIndex, ref int length, ref int startValue, int[,] spiralData)
         {
             int counter = length;
             while (counter > 0)
             {
-                spiralData[rowIndex, colIndex] = startValue;
                 startValue++;
+                spiralData[rowIndex, colIndex] = startValue;
                 colIndex++;
                 counter--;
             }
@@ -78,8 +76,8 @@
             while (counter > 0)
             {
                 rowIndex++;
-                spiralData[rowIndex, colIndex] = startValue;
                 startValue++;
+                spiralData[rowIndex, colIndex] = startValue;
                 counter--;
             }
         }
@@ -91,8 +89,8 @@
             while (counter > 0)
             {
                 colIndex--;
-                spiralData[rowIndex, colIndex] = startValue;
                 startValue++;
+                spiralData[rowIndex, colIndex] = startValue;
                 counter--;
             }
         }
@@ -104,8 +102,8 @@
             while (counter > 0)
             {
                 rowIndex--;
-                spiralData[rowIndex, colIndex] = startValue;
                 startValue++;
+                spiralData[rowIndex, colIndex] = startValue;
                 counter--;
             }
         }
@@ -117,8 +115,8 @@
             while (counter > 0)
             {
                 colIndex++;
-                spiralData[rowIndex, colIndex] = startValue;
                 startValue++;
+                spiralData[rowIndex, colIndex] = startValue;
                 counter--;
             }
         }
