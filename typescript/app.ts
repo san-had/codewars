@@ -7,7 +7,7 @@ let spiralData = create_spiral(3);
 displaySpiral(spiralData);
 
 function displaySpiral(spiralData: number[][]) {
-    let dimension = spiralData[0].length;
+    let dimension = spiralData.length;
 
     for (let i = 0; i < dimension; i++) {
         let row = "";

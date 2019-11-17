@@ -6,7 +6,12 @@ export function create_spiral(n: number) {
         [7, 6, 5]
     ]; */
 
-    let spiralData: number[][] = [];
+    //let spiralData: number[][] = [];
+
+    let spiralData = new Array(n);
+    for (let i = 0; i < n; i++) {
+        spiralData[i] = new Array(n);
+    }
 
     if (n < 1) {
         return spiralData;
@@ -24,10 +29,26 @@ export function create_spiral(n: number) {
 
     let round: number = 0;
 
+    MoveRightFirst();
+
+    console.log(startValue);
+    
+
+    function MoveRightFirst() {
+        let counter = length;
+        while (counter > 0) {
+            startValue++;
+            spiralData[rowIndex][colIndex] = startValue;
+            colIndex++;
+            counter--;
+        }
+        colIndex--;
+    }
+
 
     return spiralData;
 }
 
 function MoveRightFirst() {
-    
+
 }
