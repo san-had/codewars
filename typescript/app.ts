@@ -1,6 +1,6 @@
 import { create_spiral } from "./spiral";
 
-let N: number = 10;
+let N: number = -1;
 
 let spiralData = create_spiral(N);
 

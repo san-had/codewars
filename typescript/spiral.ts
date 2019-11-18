@@ -1,4 +1,8 @@
-export function create_spiral(n: number) {    
+export function create_spiral(n: number) {
+    
+    if (n < 1) {
+        n = 0;
+    }
  
     let spiralData = new Array(n);
     for (let i = 0; i < n; i++) {

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var spiral_1 = require("./spiral");
-var N = 10;
+var N = -1;
 var spiralData = spiral_1.create_spiral(N);
 displaySpiral(spiralData);
 function displaySpiral(spiralData) {
