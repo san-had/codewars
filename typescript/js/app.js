@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var spiral_1 = require("./spiral");
-var N = 3;
-var spiralData = spiral_1.create_spiral(3);
+var N = 10;
+var spiralData = spiral_1.create_spiral(N);
 displaySpiral(spiralData);
 function displaySpiral(spiralData) {
     var dimension = spiralData.length;

@@ -1,13 +1,5 @@
 export function create_spiral(n: number) {    
- /*    let spiralData: number[][] = 
-    [
-        [1, 2, 3],
-        [8, 9, 4],
-        [7, 6, 5]
-    ]; */
-
-    //let spiralData: number[][] = [];
-
+ 
     let spiralData = new Array(n);
     for (let i = 0; i < n; i++) {
         spiralData[i] = new Array(n);
@@ -31,8 +23,28 @@ export function create_spiral(n: number) {
 
     MoveRightFirst();
 
-    console.log(startValue);
+    do {
+        if (IsEnd()) {
+            break;
+        }
+
+        MoveDown();
+
+        MoveLeft();
+
+        if (IsEnd()) {
+            break;
+        }
+
+        MoveUp();
+
+        MoveRight();
+
+        round += 2;
+
+    } while (true);
     
+    return spiralData;
 
     function MoveRightFirst() {
         let counter = length;
@@ -45,10 +57,47 @@ export function create_spiral(n: number) {
         colIndex--;
     }
 
+    function MoveDown() {
+        let counter = length - 1 - round;
+        while(counter > 0) {
+            rowIndex++;
+            startValue++;
+            spiralData[rowIndex][colIndex] = startValue;
+            counter--;
+        }
+    }
 
-    return spiralData;
-}
+    function MoveLeft() {
+        let counter = length - 1 - round;
+        while(counter > 0) {
+            colIndex--;
+            startValue++;
+            spiralData[rowIndex][colIndex] = startValue;
+            counter--;
+        }
+    }
 
-function MoveRightFirst() {
+    function MoveUp() {
+        let counter = length - 2 - round;
+        while(counter > 0) {
+            rowIndex--;
+            startValue++;
+            spiralData[rowIndex][colIndex] = startValue;
+            counter--;
+        }
+    }
 
+    function MoveRight() {
+        let counter = length - 2 - round;
+        while(counter > 0) {
+            colIndex++;
+            startValue++;
+            spiralData[rowIndex][colIndex] = startValue;
+            counter--;
+        }
+    }
+
+    function IsEnd() {
+        return startValue == lastValue;
+    }
 }

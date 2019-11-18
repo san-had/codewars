@@ -1,8 +1,8 @@
 import { create_spiral } from "./spiral";
 
-let N: number = 3;
+let N: number = 10;
 
-let spiralData = create_spiral(3);
+let spiralData = create_spiral(N);
 
 displaySpiral(spiralData);
 

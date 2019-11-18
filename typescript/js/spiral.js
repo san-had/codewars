@@ -22,7 +22,20 @@ function create_spiral(n) {
     var lastValue = n * n;
     var round = 0;
     MoveRightFirst();
-    console.log(startValue);
+    do {
+        if (IsEnd()) {
+            break;
+        }
+        MoveDown();
+        MoveLeft();
+        if (IsEnd()) {
+            break;
+        }
+        MoveUp();
+        MoveRight();
+        round += 2;
+    } while (true);
+    return spiralData;
     function MoveRightFirst() {
         var counter = length;
         while (counter > 0) {
@@ -33,7 +46,45 @@ function create_spiral(n) {
         }
         colIndex--;
     }
-    return spiralData;
+    function MoveDown() {
+        var counter = length - 1 - round;
+        while (counter > 0) {
+            rowIndex++;
+            startValue++;
+            spiralData[rowIndex][colIndex] = startValue;
+            counter--;
+        }
+    }
+    function MoveLeft() {
+        var counter = length - 1 - round;
+        while (counter > 0) {
+            colIndex--;
+            startValue++;
+            spiralData[rowIndex][colIndex] = startValue;
+            counter--;
+        }
+    }
+    function MoveUp() {
+        var counter = length - 2 - round;
+        while (counter > 0) {
+            rowIndex--;
+            startValue++;
+            spiralData[rowIndex][colIndex] = startValue;
+            counter--;
+        }
+    }
+    function MoveRight() {
+        var counter = length - 2 - round;
+        while (counter > 0) {
+            colIndex++;
+            startValue++;
+            spiralData[rowIndex][colIndex] = startValue;
+            counter--;
+        }
+    }
+    function IsEnd() {
+        return startValue == lastValue;
+    }
 }
 exports.create_spiral = create_spiral;
 function MoveRightFirst() {
