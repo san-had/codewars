@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function create_spiral(n) {
-    if (n < 1 || isNaN(n)) {
+    if (n < 1 || typeof n != 'number') {
         n = 0;
     }
     var spiralData = new Array(n);
