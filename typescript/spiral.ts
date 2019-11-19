@@ -1,6 +1,6 @@
 export function create_spiral(n: number) {
     
-    if (n < 1) {
+    if (n < 1 || typeof n != 'number') {
         n = 0;
     }
  
