@@ -1,30 +1,20 @@
-﻿using System;
-
-namespace General
+﻿namespace General
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
-            int N = 4;
+            //var result = WellIdeas.Well(new string[] { "bad", "bad", "bad" });
 
-            var spiralArray = KataSpiral.CreateSpiral(N);
+            //System.Console.WriteLine(result);
 
-            DisplaySpiral(spiralArray);
-        }
+            //var result = WellIdeas.Well(new string[] { "good", "bad", "bad", "bad", "bad" });
 
-        private static void DisplaySpiral(int[,] spiralArray)
-        {
-            var dimension = spiralArray.GetLength(0);
+            //System.Console.WriteLine(result);
 
-            for (int i = 0; i < dimension; i++)
-            {
-                for (int j = 0; j < dimension; j++)
-                {
-                    Console.Write($"{spiralArray[i, j]}\t");
-                }
-                Console.WriteLine();
-            }
+            var result = WellIdeas.Well(new string[] { "good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good" });
+
+            System.Console.WriteLine(result);
         }
     }
 }
