@@ -4,17 +4,19 @@
     {
         private static void Main()
         {
-            //var result = WellIdeas.Well(new string[] { "bad", "bad", "bad" });
+            var height = 3;
 
-            //System.Console.WriteLine(result);
+            var result = IntroToArt.GetW(height);
 
-            //var result = WellIdeas.Well(new string[] { "good", "bad", "bad", "bad", "bad" });
+            Display(result);
+        }
 
-            //System.Console.WriteLine(result);
-
-            var result = WellIdeas.Well(new string[] { "good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good" });
-
-            System.Console.WriteLine(result);
+        private static void Display(string[] intoArt)
+        {
+            foreach (var row in intoArt)
+            {
+                System.Console.WriteLine(row);
+            }
         }
     }
 }
