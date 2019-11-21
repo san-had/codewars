@@ -4,14 +4,37 @@
     {
         public static string[] GetW(int height)
         {
-            var result = new string[]
-            {
-                "*   *   *",
-                " * * * * ",
-                "  *   *  "
-            };
+            var rowArray = CreateArray(height);
 
-            return result;
+            for (int i = 0; i < height; i++)
+            {
+                rowArray[i] = "*";
+            }
+
+            //var result = new string[]
+            //{
+            //    "*   *   *",
+            //    " * * * * ",
+            //    "  *   *  "
+            //};
+
+            //return result;
+
+            return rowArray;
+        }
+
+        private static string[] CreateArray(int height)
+        {
+            string row = string.Empty;
+
+            var stringArray = new string[height];
+
+            for (int i = 0; i < height; i++)
+            {
+                stringArray[i] = row;
+            }
+
+            return stringArray;
         }
     }
 }
