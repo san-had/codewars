@@ -2,17 +2,27 @@
 {
     public class IntroToArt
     {
+        private const string Asterisk = "*";
+        private const string Space = " ";
+
         public static string[] GetW(int height)
         {
             const int directionLength = 4;
 
             var rowArray = CreateArray(height);
 
+            bool isFirstRow = true;
+
             for (int i = 0; i < directionLength; i++)
             {
+                if (i != 0)
+                {
+                    isFirstRow = false;
+                }
+
                 if (i % 2 == 0)
                 {
-                    MoveDown(height, rowArray);
+                    MoveDown(isFirstRow, height, rowArray);
                 }
                 else
                 {
@@ -20,22 +30,17 @@
                 }
             }
 
-            //var result = new string[]
-            //{
-            //    "*   *   *",
-            //    " * * * * ",
-            //    "  *   *  "
-            //};
-
-            //return result;
-
             return rowArray;
         }
 
-        private static void MoveDown(int height, string[] rowArray)
+        private static void MoveDown(bool isFirstRow, int height, string[] rowArray)
         {
             for (int i = 0; i < height; i++)
             {
+                if (i == 0 && !isFirstRow)
+                {
+                    continue;
+                }
                 AddOneCharToEachRowDown(height, i, rowArray);
             }
         }
@@ -46,18 +51,18 @@
             {
                 if (j == i)
                 {
-                    rowArray[j] += "D";
+                    rowArray[j] += Asterisk;
                 }
                 else
                 {
-                    rowArray[j] += " ";
+                    rowArray[j] += Space;
                 }
             }
         }
 
         private static void MoveUp(int height, string[] rowArray)
         {
-            for (int i = height - 1; i >= 0; i--)
+            for (int i = height - 2; i >= 0; i--)
             {
                 AddOneCharToEachRowUp(height, i, rowArray);
             }
@@ -69,11 +74,11 @@
             {
                 if (j == i)
                 {
-                    rowArray[j] += "U";
+                    rowArray[j] += Asterisk;
                 }
                 else
                 {
-                    rowArray[j] += " ";
+                    rowArray[j] += Space;
                 }
             }
         }

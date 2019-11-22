@@ -4,7 +4,7 @@
     {
         private static void Main()
         {
-            var height = 3;
+            var height = 13;
 
             var result = IntroToArt.GetW(height);
 
