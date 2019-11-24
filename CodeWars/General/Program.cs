@@ -4,9 +4,9 @@
     {
         private static void Main()
         {
-            var height = 13;
+            var height = 5;
 
-            var result = IntroToArt.GetW(height);
+            var result = IntroArt4.GetW(height);
 
             Display(result);
         }
