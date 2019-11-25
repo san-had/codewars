@@ -6,7 +6,7 @@
         {
             var height = 5;
 
-            var result = IntroArt4.GetW(height);
+            var result = IntroArt5.GetW(height);
 
             Display(result);
         }
