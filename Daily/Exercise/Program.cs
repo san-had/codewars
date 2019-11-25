@@ -1,29 +1,21 @@
-﻿using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace Exercise
 {
     internal class Program
     {
-        private static int DoComplexCalculation(int input)
+        private static void Main()
         {
-            Thread.Sleep(3000);
+            int[] numbers = { 1, 2, 3 };
 
-            System.Console.WriteLine("DoComplexCalculation");
+            string[] words = { "One", "Two", "Three" };
 
-            return input * 1000;
-        }
+            var zipped = numbers.Zip(words, (a1, a2) => string.Concat($"{a2} : {a1.ToString()}"));
 
-        private static async Task<int> Main(string[] args)
-        {
-            var backgroundTask = Task.Run(() => DoComplexCalculation(42));
-
-            var result = await backgroundTask;
-
-            System.Console.WriteLine(result.ToString());
-
-            return result;
+            foreach (var item in zipped)
+            {
+                System.Console.WriteLine(item);
+            }
         }
     }
 }
