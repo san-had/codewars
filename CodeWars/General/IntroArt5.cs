@@ -4,17 +4,19 @@ namespace General
 {
     public class IntroArt5
     {
+        private const char Space = ' ';
+        private const char Asterisk = '*';
+
         public static string[] GetW(int height)
         {
             var line = Enumerable.Range(0, height)
-                .Select(i => $"{ new string(' ', i)}*{new string(' ', height - 1 - i)}");
+                .Select(i => $"{new string(Space, i)}{Asterisk}{new string(Space, height - i - 1)}");
 
-            var vee = line.Zip(line.Select(s => s.Reverse()), (s1, s2) => s1.Concat(s2.Skip(1)));
-            var doubleyew = vee.Zip(vee.Select(s => s.Reverse()), (s1, s2) => s1.Concat(s2.Skip(1)));
+            var vue = line.Zip(line.Select(s => s.Reverse()), (s1, s2) => s1.Concat(s2.Skip(1)));
 
-            var result = doubleyew.Select(s => string.Concat(s)).ToArray();
+            var doubleyew = vue.Zip(vue.Select(s => s.Reverse()), (s1, s2) => s1.Concat(s2.Skip(1)));
 
-            return result;
+            return doubleyew.Select(s => string.Concat(s)).ToArray();
         }
     }
 }
