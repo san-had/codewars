@@ -14,9 +14,9 @@ namespace General
 
             var vue = line.Zip(line.Select(s => s.Reverse()), (s1, s2) => s1.Concat(s2.Skip(1)));
 
-            var doubleyew = vue.Zip(vue.Select(s => s.Reverse()), (s1, s2) => s1.Concat(s2.Skip(1)));
+            var doubleyou = vue.Zip(vue.Select(s => s.Reverse()), (s1, s2) => s1.Concat(s2.Skip(1)));
 
-            return doubleyew.Select(s => string.Concat(s)).ToArray();
+            return doubleyou.Select(s => string.Concat(s)).ToArray();
         }
     }
 }
