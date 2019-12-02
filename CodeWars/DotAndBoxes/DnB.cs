@@ -47,6 +47,10 @@ namespace DotAndBoxes
 
             inputSide = Tuple.Create(move[0], move[1]);
 
+            //var sides = squares
+            //    .SelectMany(x => x.Sides)
+            //    .Where(x => x.Item1 == inputSide.Item1 && x.Item2 == inputSide.Item2);
+
             for (int i = 0; i < squares.Count; i++)
             {
                 for (int j = 0; j < squares[i].Sides.Count; j++)
