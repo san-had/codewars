@@ -94,20 +94,32 @@ namespace DotAndBoxes
 
         private static List<Square> CreateSquares(int length)
         {
-            var square1 = CreateSquare1(length);
+            var squares = new List<Square>();
 
-            var square2 = CreateSquare2(length);
-
-            var square3 = CreateSquare3(length);
-
-            var square4 = CreateSquare4(length);
-
-            var squares = new List<Square>
+            for (int i = 0; i < length - 1; i++)
             {
-                square1, square2, square3, square4
-            };
+                squares.Add(CreateSquare(i, length));
+            }
+
+            for (int i = length; i < 2 * length - 1; i++)
+            {
+                squares.Add(CreateSquare(i, length));
+            }
 
             return squares;
+        }
+
+        private static Square CreateSquare(int st, int length)
+        {
+            var side1 = Tuple.Create(st, st + 1);
+            var side2 = Tuple.Create(st + 1, st + 1 + length);
+            var side3 = Tuple.Create(st + length, st + length + 1);
+            var side4 = Tuple.Create(st, st + length);
+
+            var square = new Square()
+            { Sides = new List<Tuple<int, int>>() { side1, side2, side3, side4 } };
+
+            return square;
         }
 
         private static Square CreateSquare1(int length)
