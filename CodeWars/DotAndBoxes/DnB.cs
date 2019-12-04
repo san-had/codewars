@@ -129,58 +129,6 @@ namespace DotAndBoxes
 
             return square;
         }
-
-        private static Square CreateSquare1(int length)
-        {
-            var side1 = Tuple.Create(0, 1);
-            var side2 = Tuple.Create(1, 4);
-            var side3 = Tuple.Create(3, 4);
-            var side4 = Tuple.Create(0, 3);
-
-            var square = new Square()
-            { Sides = new List<Tuple<int, int>>() { side1, side2, side3, side4 } };
-
-            return square;
-        }
-
-        private static Square CreateSquare2(int length)
-        {
-            var side1 = Tuple.Create(1, 2);
-            var side2 = Tuple.Create(1, 4);
-            var side3 = Tuple.Create(4, 5);
-            var side4 = Tuple.Create(2, 5);
-
-            var square = new Square()
-            { Sides = new List<Tuple<int, int>>() { side1, side2, side3, side4 } };
-
-            return square;
-        }
-
-        private static Square CreateSquare3(int length)
-        {
-            var side1 = Tuple.Create(3, 4);
-            var side2 = Tuple.Create(3, 6);
-            var side3 = Tuple.Create(4, 7);
-            var side4 = Tuple.Create(6, 7);
-
-            var square = new Square()
-            { Sides = new List<Tuple<int, int>>() { side1, side2, side3, side4 } };
-
-            return square;
-        }
-
-        private static Square CreateSquare4(int length)
-        {
-            var side1 = Tuple.Create(4, 5);
-            var side2 = Tuple.Create(4, 7);
-            var side3 = Tuple.Create(5, 8);
-            var side4 = Tuple.Create(7, 8);
-
-            var square = new Square()
-            { Sides = new List<Tuple<int, int>>() { side1, side2, side3, side4 } };
-
-            return square;
-        }
     }
 
     internal class Square
