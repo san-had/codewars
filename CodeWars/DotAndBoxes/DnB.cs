@@ -47,10 +47,6 @@ namespace DotAndBoxes
 
             inputSide = Tuple.Create(move[0], move[1]);
 
-            //var sides = squares
-            //    .SelectMany(x => x.Sides)
-            //    .Where(x => x.Item1 == inputSide.Item1 && x.Item2 == inputSide.Item2);
-
             for (int i = 0; i < squares.Count; i++)
             {
                 for (int j = 0; j < squares[i].Sides.Count; j++)
@@ -95,16 +91,28 @@ namespace DotAndBoxes
         private static List<Square> CreateSquares(int length)
         {
             var squares = new List<Square>();
+            var rowIndex = 0;
+            var squareCounter = 0;
+            var maxSquares = (int)Math.Pow((length - 1), 2);
 
-            for (int i = 0; i < length - 1; i++)
+            do
             {
-                squares.Add(CreateSquare(i, length));
-            }
-
-            for (int i = length; i < 2 * length - 1; i++)
-            {
-                squares.Add(CreateSquare(i, length));
-            }
+                if (rowIndex == 0)
+                {
+                    for (int i = 0; i < length; i++)
+                    {
+                        squares.Add(CreateSquare(i, length));
+                        squareCounter++;
+                    }
+                    rowIndex++;
+                }
+                for (int i = rowIndex * length; i < 2 * rowIndex * length - 1; i++)
+                {
+                    squares.Add(CreateSquare(i, length));
+                    squareCounter++;
+                }
+                rowIndex++;
+            } while (squareCounter < maxSquares);
 
             return squares;
         }
