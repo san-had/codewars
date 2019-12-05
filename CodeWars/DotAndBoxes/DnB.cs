@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DotAndBoxes
 {
@@ -9,7 +10,7 @@ namespace DotAndBoxes
         {
             var result = new int[2] { 0, 0 };
 
-            var length = 3;
+            var length = CalculateLength(moves);
 
             var squares = CreateSquares(length);
 
@@ -28,6 +29,13 @@ namespace DotAndBoxes
             }
 
             return result;
+        }
+
+        private static int CalculateLength(int[][] moves)
+        {
+            var maxValue = moves.Select(x => x[0] > x[1] ? x[0] : x[1]).Max();
+
+            return (int)Math.Sqrt(maxValue + 1);
         }
 
         private static int FindMove(List<Square> squares, int[] move)
