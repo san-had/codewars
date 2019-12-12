@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace DotAndBoxes
 {
@@ -8,6 +9,10 @@ namespace DotAndBoxes
     {
         public static int[] DotsAndBoxes(int[][] moves)
         {
+            //string moveString = StringifyMoves(moves);
+
+            //throw new Exception(moveString);
+
             var result = new int[2] { 0, 0 };
 
             var length = CalculateLength(moves);
@@ -29,6 +34,17 @@ namespace DotAndBoxes
             }
 
             return result;
+        }
+
+        private static string StringifyMoves(int[][] moves)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var move in moves)
+            {
+                sb.Append($"new[] {{{move[0]}, {move[1]}}},\n");
+            }
+            return sb.ToString();
         }
 
         private static int CalculateLength(int[][] moves)
