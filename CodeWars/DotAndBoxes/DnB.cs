@@ -36,7 +36,7 @@ namespace DotAndBoxes
             return result;
         }
 
-        private static string StringifyMoves(int[][] moves)
+        public static string StringifyMoves(int[][] moves)
         {
             StringBuilder sb = new StringBuilder();
 
