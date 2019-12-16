@@ -4,18 +4,18 @@
     {
         private static void Main()
         {
-            var height = 5;
+            var input = new int[3] { 1, 2, 3 };
 
-            var result = IntroArt5.GetW(height);
+            var result = LostWoMap.Maps(input);
 
             Display(result);
         }
 
-        private static void Display(string[] intoArt)
+        private static void Display(int[] input)
         {
-            foreach (var row in intoArt)
+            foreach (var item in input)
             {
-                System.Console.WriteLine(row);
+                System.Console.WriteLine(item);
             }
         }
     }
