@@ -4,19 +4,15 @@
     {
         private static void Main()
         {
-            var input = new int[3] { 1, 2, 3 };
+            var input = "WhAt! FiCK! DaMn CAke?";
 
-            var result = LostWoMap.Maps(input);
+            var input2 = "THE big PeOpLE Here!!";
 
-            Display(result);
-        }
+            var input3 = "i AM a TINY BoY!!G;H,-";
 
-        private static void Display(int[] input)
-        {
-            foreach (var item in input)
-            {
-                System.Console.WriteLine(item);
-            }
+            var result = BorrowerSpeak.Borrow(input3);
+
+            System.Console.WriteLine(result);
         }
     }
 }
