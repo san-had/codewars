@@ -65,9 +65,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrArrays", "OrArrays\OrArra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "General", "General\General.csproj", "{C83905ED-DC1F-4B0E-A21F-115BC2DAB9A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotAndBoxes", "DotAndBoxes\DotAndBoxes.csproj", "{49758D42-1069-4044-B7E0-9DAC6FF0B0DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotAndBoxes", "DotAndBoxes\DotAndBoxes.csproj", "{49758D42-1069-4044-B7E0-9DAC6FF0B0DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotAndBoxesTest", "DotAndBoxesTest\DotAndBoxesTest.csproj", "{54F97E32-EEEE-4C76-8C02-69F83B2EDD65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotAndBoxesTest", "DotAndBoxesTest\DotAndBoxesTest.csproj", "{54F97E32-EEEE-4C76-8C02-69F83B2EDD65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrowingPlant", "GrowingPlant\GrowingPlant.csproj", "{8168BD41-A764-402E-A4E7-664A50F7CC2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -207,6 +209,10 @@ Global
 		{54F97E32-EEEE-4C76-8C02-69F83B2EDD65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54F97E32-EEEE-4C76-8C02-69F83B2EDD65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54F97E32-EEEE-4C76-8C02-69F83B2EDD65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8168BD41-A764-402E-A4E7-664A50F7CC2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8168BD41-A764-402E-A4E7-664A50F7CC2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8168BD41-A764-402E-A4E7-664A50F7CC2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8168BD41-A764-402E-A4E7-664A50F7CC2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
