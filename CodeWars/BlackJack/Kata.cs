@@ -24,14 +24,7 @@ namespace BlackJack
 
             int above21 = valueWithA11 - 21;
 
-            if (below21 <= above21)
-            {
-                return valueWithA1;
-            }
-            else
-            {
-                return valueWithA11;
-            }
+            return below21 <= above21 ? valueWithA1 : valueWithA11;
         }
 
         private static Dictionary<string, int> SetupCardValues(int aValue)
