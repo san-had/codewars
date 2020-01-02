@@ -1,33 +1,46 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace BlackJack
 {
     public class Kata
     {
-        private static readonly Dictionary<string, int> cardValuesA1 = SetupCardValues(1);
-
-        private static readonly Dictionary<string, int> cardValuesA11 = SetupCardValues(11);
+        private static readonly Dictionary<string, int> cardValues = SetupCardValues();
 
         public static int ScoreHand(string[] cards)
         {
-            int valueWithA1 = 0;
+            int values = 0;
 
-            int valueWithA11 = 0;
+            int numberOfAces = cards.Count(x => x == "A");
 
-            foreach (var card in cards)
+            foreach (var card in cards.Where(x => x != "A"))
             {
-                valueWithA1 += cardValuesA1[card];
-                valueWithA11 += cardValuesA11[card];
+                values += cardValues[card];
             }
 
-            int below21 = 21 - valueWithA1;
+            for (int i = 0; i < numberOfAces; i++)
+            {
+                if (values < 21)
+                {
+                    if (21 - values >= 11)
+                    {
+                        values += 11;
+                    }
+                    else
+                    {
+                        values += 1;
+                    }
+                }
+                else
+                {
+                    values += 1;
+                }
+            }
 
-            int above21 = valueWithA11 - 21;
-
-            return below21 <= above21 ? valueWithA1 : valueWithA11;
+            return values;
         }
 
-        private static Dictionary<string, int> SetupCardValues(int aValue)
+        private static Dictionary<string, int> SetupCardValues()
         {
             var cardValues = new Dictionary<string, int>();
 
@@ -39,7 +52,6 @@ namespace BlackJack
             cardValues.Add("J", 10);
             cardValues.Add("Q", 10);
             cardValues.Add("K", 10);
-            cardValues.Add("A", aValue);
 
             return cardValues;
         }
