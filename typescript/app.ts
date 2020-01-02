@@ -1,20 +1,22 @@
-import { create_spiral } from "./spiral";
+import { scoreHand } from "./blackJack";
 
-let N: number = -1;
+/* let cards : string[] = [ "A" ];
+console.log(scoreHand(cards));
 
-let spiralData = create_spiral(N);
+let cards2 : string[] = [ "A", "J" ];
+console.log(scoreHand(cards2));
 
-displaySpiral(spiralData);
+let cards3 : string[] = [  "A", "10", "A" ];
+console.log(scoreHand(cards3));
 
-function displaySpiral(spiralData: number[][]) {
-    let dimension = spiralData.length;
+let cards4 : string[] = [ "5", "3", "7" ];
+console.log(scoreHand(cards4));
 
-    for (let i = 0; i < dimension; i++) {
-        let row = "";
-        for (let j = 0; j < dimension; j++) {
-            row = row + " " + spiralData[i][j]
-        }
-        console.log(row);        
-    }
+let cards5 : string[] = [ "5", "4", "3", "2", "A", "K" ];
+console.log(scoreHand(cards5)); */
 
-}
+let cards6 : string[] = [ "A", "A" ];
+console.log(scoreHand(cards6));
+
+let cards7 : string[] = [ "A", "2", "A", "9", "9" ];
+console.log(scoreHand(cards7));
