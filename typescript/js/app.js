@@ -15,8 +15,13 @@ console.log(scoreHand(cards4));
 
 let cards5 : string[] = [ "5", "4", "3", "2", "A", "K" ];
 console.log(scoreHand(cards5)); */
-var cards6 = ["A", "A"];
-console.log(blackJack_1.scoreHand(cards6));
-var cards7 = ["A", "2", "A", "9", "9"];
-console.log(blackJack_1.scoreHand(cards7));
+/* let cards6 : string[] = [ "A", "A" ];
+console.log(scoreHand(cards6));
+
+let cards7 : string[] = [ "A", "2", "A", "9", "9" ];
+console.log(scoreHand(cards7)); */
+var cards8 = ["A", "Q", "A"];
+console.log(blackJack_1.scoreHand(cards8));
+var cards9 = ["A", "3", "7", "A"];
+console.log(blackJack_1.scoreHand(cards9));
 //# sourceMappingURL=app.js.map

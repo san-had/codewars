@@ -1,26 +1,32 @@
 export function scoreHand(cards: string[]) {
 
-    let cardValuesA1 : {[key:string] : number } = {};
-    let cardValuesA11 : {[key:string]: number} = {};
+    let numberOfAces : number = cards.filter(x => x == "A").length;
 
-    cardValuesA1 = SetupCardValues(1);
-    cardValuesA11 = SetupCardValues(11);
+    let cardValues : {[key:string] : number } = {};
 
-    let valueWithA1: number = 0;
-    let valueWithA11: number = 0;
+    cardValues = SetupCardValues();
+
+    let values: number = 0;
     
-    for (const card of cards) {
-        valueWithA1 += cardValuesA1[card];
-        valueWithA11 += cardValuesA11[card];
+    for (const card of cards.filter(x => x != "A")) {
+        values += cardValues[card];
     }
 
-    let below21 : number = 21 - valueWithA1;
-    let above21 : number = valueWithA11 - 21;
-
-    return below21 <= above21 ? valueWithA1 : valueWithA11;
+    for (let i = 0; i < numberOfAces; i++ ) {
+        if (values < 21) {
+            if (21 - values >= 11 + (numberOfAces - 1)) {
+                values += 11;
+            } else {
+                values += 1;
+            }
+        } else {
+            values += 1;
+        }
+    }
+    return values;
 }
 
-function SetupCardValues(aValue: number) {
+function SetupCardValues() {
 
     let cardValues : {[key:string] : number } = {};
     for (let i = 2; i < 11; i++) {        
@@ -29,7 +35,6 @@ function SetupCardValues(aValue: number) {
     cardValues["J"] = 10;
     cardValues["Q"] = 10;
     cardValues["K"] = 10;
-    cardValues["A"] = aValue;
 
     return cardValues;
 }
