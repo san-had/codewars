@@ -1,18 +1,17 @@
-﻿namespace General
+﻿using System;
+
+namespace General
 {
-    internal class Program
+    public class Program
     {
         private static void Main()
         {
-            var input = "WhAt! FiCK! DaMn CAke?";
+            var integers = GenerateRange.GenerateRangeOfIntegeres(1, 10, 3);
 
-            var input2 = "THE big PeOpLE Here!!";
-
-            var input3 = "i AM a TINY BoY!!G;H,-";
-
-            var result = BorrowerSpeak.Borrow(input3);
-
-            System.Console.WriteLine(result);
+            foreach (var item in integers)
+            {
+                Console.WriteLine(item.ToString());
+            }
         }
     }
 }
