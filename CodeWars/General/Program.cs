@@ -1,17 +1,10 @@
-﻿using System;
-
-namespace General
+﻿namespace General
 {
     public class Program
     {
         private static void Main()
         {
-            var integers = GenerateRange.GenerateRangeOfIntegeres(1, 10, 3);
-
-            foreach (var item in integers)
-            {
-                Console.WriteLine(item.ToString());
-            }
+            System.Console.WriteLine(DeafRats.CountDeafRats("~O~O~O~O P"));
         }
     }
 }
