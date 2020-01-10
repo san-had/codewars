@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text;
 
 namespace General
 {
@@ -8,18 +9,14 @@ namespace General
         {
             int deafRatsCount = 0;
 
-            string sequenceAll = GetSequence(town);
-
-            string[] sequences = sequenceAll.Split('P');
+            string[] sequences = town.Split('P');
 
             char direction = 'R';
 
-            foreach (var sequence in sequences)
+            foreach (var rawSequence in sequences)
             {
-                if (direction == ' ')
-                {
-                    direction = GetDirection(sequence);
-                }
+                string sequence = FilterSequence(rawSequence);
+
                 deafRatsCount += GetDeafRatsCount(direction, sequence);
 
                 direction = direction == 'L' ? 'R' : 'L';
@@ -33,36 +30,20 @@ namespace General
             return sequence.Count(ch => ch != direction);
         }
 
-        private static char GetDirection(string sequence)
+        private static string FilterSequence(string sequence)
         {
-            int leftDirection = sequence.Count(x => x == 'L');
-            int rightDirection = sequence.Count(x => x == 'R');
+            StringBuilder filteredSequence = new StringBuilder();
 
-            return leftDirection >= rightDirection ? 'L' : 'R';
-        }
+            sequence = sequence.Replace("0", "O")
+                               .Replace(" ", string.Empty);
 
-        private static string GetSequence(string town)
-        {
-            string filteredTown1 = town.Replace("0", "O");
-
-            int firstIndexOfWave = filteredTown1.IndexOf('~');
-            int firstIndexOfO = filteredTown1.IndexOf('O');
-
-            string filteredTown2 = string.Empty;
-            if (firstIndexOfO > firstIndexOfWave)
+            for (int i = 0; i < sequence.Length; i += 2)
             {
-                filteredTown2 = filteredTown1.Replace("~O", "R")
-                                             .Replace("O~", "L");
-            }
-            else
-            {
-                filteredTown2 = filteredTown1.Replace("O~", "L")
-                                              .Replace("~O", "R");
+                string direction = sequence.Substring(i, 2) == "~O" ? "R" : "L";
+                filteredSequence.Append(direction);
             }
 
-            string sequenceAll = filteredTown2.Replace(" ", string.Empty);
-
-            return sequenceAll;
+            return filteredSequence.ToString();
         }
     }
 }
