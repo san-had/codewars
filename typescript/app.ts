@@ -1,8 +1,8 @@
-import { generateRange } from "./generate";
+import { getColumnNumbers2 } from "./textEditor";
 
-let integers = generateRange(1, 10, 3);
+let result = getColumnNumbers2(["a", "b", "c"]);
 
-for (let i of integers) {
-    console.log(i);
+for(const ch of result) {
+    console.log(ch);
     
 }
