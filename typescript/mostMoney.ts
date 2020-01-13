@@ -9,9 +9,14 @@ export function mostMoney(students: Student[]) {
         });
 
     let numberOfMaxMoney : number = reducedStudentArray
-        .filter(student => student.money == Math.max(student.money)).length;
-    
+        .filter(student => Math.max(student.money)).length;
 
+    if (numberOfMaxMoney > 1) {
+        return "all";        
+    } else {
+        return reducedStudentArray
+        .filter(student => student.money == Math.max(student.money))[0].name;
+    }    
 }
 
 class reducedStudent {

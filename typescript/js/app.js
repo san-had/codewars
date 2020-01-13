@@ -1,9 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var textEditor_1 = require("./textEditor");
-var result = textEditor_1.getColumnNumbers2(["a", "b", "c"]);
-for (var _i = 0, result_1 = result; _i < result_1.length; _i++) {
-    var ch = result_1[_i];
-    console.log(ch);
-}
+var Student_1 = require("./Student");
+var mostMoney_1 = require("./mostMoney");
+var andy = new Student_1.Student("Andy", 0, 0, 2);
+var stephen = new Student_1.Student("Stephen", 0, 4, 0);
+var eric = new Student_1.Student("Eric", 8, 1, 0);
+var david = new Student_1.Student("David", 2, 0, 1);
+var phil = new Student_1.Student("Phil", 0, 2, 1);
+var cam = new Student_1.Student("Cameron", 2, 2, 0);
+var geoff = new Student_1.Student("Geoff", 0, 3, 0);
+console.log(mostMoney_1.mostMoney([andy, stephen, eric, david, phil]));
+console.log(mostMoney_1.mostMoney([cam, geoff, andy, stephen, eric, david, phil]));
 //# sourceMappingURL=app.js.map
