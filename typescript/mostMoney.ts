@@ -8,9 +8,7 @@ export function mostMoney(students: Student[]) {
             return new reducedStudent(student.name, money);
         });
 
-    let maxMoneyArray: number[] = reducedStudentArray.map(student => student.money);
-
-    let maxMoney: number = Math.max(...maxMoneyArray);
+    let maxMoney: number = Math.max(...reducedStudentArray.map(student => student.money));
 
     let numberOfMaxMoney : number = reducedStudentArray
         .filter(student => student.money == maxMoney).length;
