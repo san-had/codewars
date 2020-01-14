@@ -13,3 +13,15 @@ console.log(mostMoney([andy, stephen, eric, david, phil]));
 
 console.log(mostMoney([cam, geoff, andy, stephen, eric, david, phil]));
 
+console.log(mostMoney([andy]));
+
+console.log(mostMoney([stephen]));
+
+console.log(mostMoney([cam, geoff]));
+
+console.log(mostMoney([david, cam, geoff]));
+
+
+
+
+

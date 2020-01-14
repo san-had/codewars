@@ -11,4 +11,8 @@ var cam = new Student_1.Student("Cameron", 2, 2, 0);
 var geoff = new Student_1.Student("Geoff", 0, 3, 0);
 console.log(mostMoney_1.mostMoney([andy, stephen, eric, david, phil]));
 console.log(mostMoney_1.mostMoney([cam, geoff, andy, stephen, eric, david, phil]));
+console.log(mostMoney_1.mostMoney([andy]));
+console.log(mostMoney_1.mostMoney([stephen]));
+console.log(mostMoney_1.mostMoney([cam, geoff]));
+console.log(mostMoney_1.mostMoney([david, cam, geoff]));
 //# sourceMappingURL=app.js.map
