@@ -13,16 +13,13 @@ export function mostMoney(students: Student[]) {
     let numberOfMaxMoney : number = reducedStudentArray
         .filter(student => student.money == maxMoney).length;
 
-    if (numberOfMaxMoney > 1) {
-        return "all";        
-    } else {
-        return reducedStudentArray
-        .filter(student => student.money == maxMoney)[0].name;
-    }    
+    return numberOfMaxMoney > 1 
+        ? "all" 
+        : reducedStudentArray.filter(student => student.money == maxMoney)[0].name;
+
 }
 
 class reducedStudent {
     constructor(public name: string, public money: number ) {
-
     }
 }
