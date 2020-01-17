@@ -1,5 +1,6 @@
-import { zeroFuel } from "./willYouMake";
+import { calculate } from "./basicMath";
 
-console.log(zeroFuel(50, 25, 2));
+console.log(calculate("1plus2plus3plus4"));
 
-console.log(zeroFuel(100, 50, 1));
+
+
