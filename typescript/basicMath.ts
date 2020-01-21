@@ -8,44 +8,46 @@ export function calculate(inputStr: string) {
         inputStr = inputStr.replace("minus", "-");
     }
 
-    let total: number = getFirstItem(inputStr);
+    let total: number = getItem(inputStr);
 
     do {
+        let operation: string = getOperation(inputStr);
 
-    let operation: string = getOperation(inputStr);
+        let item: number = getItem(inputStr);
 
-    let item: number = parseInt(inputStr.substr(0,index));
-
-    inputStr = inputStr.substr(index + 1);
-
-    if (operation == "+") {
-        total += item;
-    } else {
-        total -= item;
-    }
-    
-    } while ()
-
-
+        if (operation == "+") {
+            total += item;
+        } else {
+            total -= item;
+        }   
+    } while (inputStr.length > 0)
 
     let result: string = total.toString();
 
     return result;
 }
 
-function getFirstItem(inputStr:string) {
+function getItem(inputStr:string) {
 
-    let indexPlus = inputStr.indexOf("+");
-    let indexMinus = inputStr.indexOf("-");
+    let indexPlus = getOperationIndex(inputStr, "+");
+    let indexMinus = getOperationIndex(inputStr, "-");
     let index = indexPlus < indexMinus ? indexPlus : indexMinus;
-    return parseInt(inputStr.substr(0,index));
-
+    let firstItem = parseInt(inputStr.substr(0,index));
+    inputStr = inputStr.substr(index);
+    return firstItem;
 }
 
 function getOperation(inputStr: string) {
 
-    let indexPlus = inputStr.indexOf("+");
-    let indexMinus = inputStr.indexOf("-");
-
+    let indexPlus = getOperationIndex(inputStr, "+");
+    let indexMinus = getOperationIndex(inputStr, "-");
+    let index = indexPlus < indexMinus ? indexPlus : indexMinus;
+    inputStr = inputStr.substr(index + 1);
     return indexPlus < indexMinus ? "+" : "-";
+}
+
+function getOperationIndex(inputStr: string, operationStr: string) {
+    return inputStr.indexOf(operationStr) != -1
+     ? inputStr.indexOf(operationStr) 
+     : 999999;
 }
