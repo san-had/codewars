@@ -8,12 +8,18 @@ export function calculate(inputStr: string) {
         inputStr = inputStr.replace("minus", "-");
     }
 
-    let total: number = getItem(inputStr);
+    let firstItemTuple: [number, string] = getItem(inputStr);
+    let total: number = firstItemTuple[0];
+    inputStr = firstItemTuple[1];
 
     do {
-        let operation: string = getOperation(inputStr);
+        let operationTuple: [string, string] = getOperation(inputStr);
+        let operation: string = operationTuple[0];
+        inputStr = operationTuple[1];
 
-        let item: number = getItem(inputStr);
+        let itemTuple: [number, string] = getItem(inputStr);
+        let item: number = itemTuple[0];
+        inputStr = getItem(inputStr)[1];
 
         if (operation == "+") {
             total += item;
@@ -34,7 +40,8 @@ function getItem(inputStr:string) {
     let index = indexPlus < indexMinus ? indexPlus : indexMinus;
     let firstItem = parseInt(inputStr.substr(0,index));
     inputStr = inputStr.substr(index);
-    return firstItem;
+    let itemTuple: [number, string] = [firstItem, inputStr];
+    return itemTuple;
 }
 
 function getOperation(inputStr: string) {
@@ -43,7 +50,9 @@ function getOperation(inputStr: string) {
     let indexMinus = getOperationIndex(inputStr, "-");
     let index = indexPlus < indexMinus ? indexPlus : indexMinus;
     inputStr = inputStr.substr(index + 1);
-    return indexPlus < indexMinus ? "+" : "-";
+    let operation: string = indexPlus < indexMinus ? "+" : "-";
+    let operationTuple: [string, string] = [operation, inputStr];
+    return operationTuple;
 }
 
 function getOperationIndex(inputStr: string, operationStr: string) {
