@@ -19,6 +19,8 @@
             };
 
             var ranks = Kata.ComputeRanks(numberOfTeams, games);
+
+            Display(ranks);
         }
 
         private static void Display(int[] ranks)
