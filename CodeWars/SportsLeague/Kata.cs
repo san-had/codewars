@@ -82,6 +82,10 @@ namespace SportsLeague
                 teams[teamIndex].Rank = rank;
                 rank++;
             }
+
+            foreach (var team in teams.GroupBy(t => t.Points))
+            {
+            }
         }
 
         private static IEnumerable<int> UpdateRanks(List<Team> teams)
