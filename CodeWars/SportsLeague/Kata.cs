@@ -55,37 +55,35 @@ namespace SportsLeague
         private static void UpdateTeamRanks(List<Team> teams)
         {
             int rank = 1;
-            //int point = teams.Max(t => t.Points);
-            //do
-            //{
-            //    var selectedTeams = teams.Where(t => t.Points == point);
-            //    if (selectedTeams.Count() == 1)
-            //    {
-            //        int teamIndex = selectedTeams.First().Id;
-            //        teams[teamIndex].Rank = rank;
-            //    }
-            //    else
-            //    {
-            //        int gd = selectedTeams.Max(t => t.GD);
-            //        var selectedTeamsGD = selectedTeams.Where(t => t.GD == gd);
-            //        if (selectedTeamsGD.Count() == 1)
-            //        {
-            //            int teamIndex = selectedTeamsGD.First().Id;
-            //            teams[teamIndex].Rank = rank;
-            //        }
-            //    }
-            //} while (true);
-
-            foreach (var team in teams.OrderByDescending(t => t.Points).ThenByDescending(x => x.GD))
+            var sortedTeams = teams
+               .OrderByDescending(t => t.Points)
+                .ThenByDescending(x => x.GD)
+                .ThenByDescending(x => x.For)
+                .ToArray();
+            int sortedTeamsLength = sortedTeams.Count();
+            for (int index = 0; index < sortedTeamsLength; index++)
             {
-                var teamIndex = team.Id;
+                var teamIndex = sortedTeams[index].Id;
                 teams[teamIndex].Rank = rank;
+                var nextIsEqual = (index + 1 < sortedTeamsLength) && IsEqual(sortedTeams[index], sortedTeams[index + 1]);
+                if (nextIsEqual)
+                {
+                    var nextTeamIndex = sortedTeams[index + 1].Id;
+                    teams[nextTeamIndex].Rank = rank;
+                    index++;
+                    rank++;
+                }
                 rank++;
             }
+        }
 
-            foreach (var team in teams.GroupBy(t => t.Points))
+        private static bool IsEqual(Team teamA, Team teamB)
+        {
+            if (teamA.Points == teamB.Points && teamA.GD == teamB.GD && teamA.For == teamB.For)
             {
+                return true;
             }
+            return false;
         }
 
         private static IEnumerable<int> UpdateRanks(List<Team> teams)
