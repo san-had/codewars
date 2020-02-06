@@ -18,5 +18,8 @@
     <ClCompile Include="Hello.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Greeting.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

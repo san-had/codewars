@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(void) {
+int _main(void) {
 	double A[5] = {
 	[0] = 9.0,
 	[1] = 2.9,
