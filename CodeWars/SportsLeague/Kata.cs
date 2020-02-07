@@ -27,7 +27,7 @@ namespace SportsLeague
 
             foreach (var team in teams)
             {
-                System.Console.WriteLine($"{team.Id} {team.For} {team.Against} {team.GD} {team.Points} {team.Rank}");
+                System.Console.WriteLine($"Team{team.Id} {team.For} : {team.Against} {team.GD} {team.Points} {team.Rank}");
             }
 
             return UpdateRanks(teams).ToArray<int>();

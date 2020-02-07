@@ -1,26 +1,46 @@
 export function computeRanks(numberOfTeams: number, games:number[][]): number[] {
 
     let teams = CreateTeams(numberOfTeams);
+    let gamesLength = games.length;
 
-    for (let i = 0; i < games[0].length; i++) {
+    for (let i = 0; i < gamesLength; i++) {
         let team1 = teams[games[i][0]];
         let team2 = teams[games[i][1]];
 
         let team1Score = games[i][2];
         let team2Score = games[i][3];
 
-        UpdateTeam(team1, team1Score, team2Score);
-        UpdateTeam(team2, team2Score, team1Score);
+        team1 = UpdateTeam(team1, team1Score, team2Score);
+        team2 = UpdateTeam(team2, team2Score, team1Score);
+
+        teams[games[i][0]] = team1;
+        teams[games[i][1]] = team2;
     }
 
-    UpdateTeamRanks(teams);
+    let updatedTeams = UpdateTeamRanks(teams);
 
-    
+    displayTeams(updatedTeams);
 
-    let ranks: number[];
+    let ranks: number[] = getRanks(updatedTeams);
 
     return ranks;
 
+}
+
+function getRanks(teams: Array<Team>) {
+    let ranks: number[] = [];
+    for (let team of teams) {
+        ranks.push(team.Rank);
+    }
+    return ranks;
+}
+
+function displayTeams(teams: Array<Team>) {
+    for(let team of teams) {
+        console.log("Team" + team.Id.toString() + " " + team.Vor.toString() + " : " + team.Against.toString() + 
+        " " + team.GD.toString() + " " + team.Points.toString() + " " + team.Rank.toString());
+        
+    }
 }
 
 function UpdateTeamRanks(teams: Array<Team>) {
@@ -46,6 +66,7 @@ function UpdateTeamRanks(teams: Array<Team>) {
         rank += rankGap;
         rank++;
     }
+    return teams;
 }
 
 function IsEqual(teamA: Team, teamB: Team) {
@@ -55,10 +76,11 @@ function IsEqual(teamA: Team, teamB: Team) {
     return false;
 }
 
-function UpdateTeam(team: Team, vor: number, against: number) {
+function UpdateTeam(team: Team, vor: number, against: number): Team {
     team.Vor += vor;
     team.Against += against;
     team.Points += vor === against ? 1 : vor > against ? 2 : 0;
+    return team;
 }
 
 function CreateTeams(numberOfTeams: number) {
@@ -66,6 +88,7 @@ function CreateTeams(numberOfTeams: number) {
     for (let i = 0; i < numberOfTeams; i++) {
         let team: Team = new Team();
         team.Id = i;
+        team.Vor = 0, team.Against = 0, team.Points = 0, team.Rank = 0;
         teamArray.push(team);
     }
     return teamArray;

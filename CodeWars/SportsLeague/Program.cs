@@ -54,11 +54,11 @@
                 {0, 7, 2, 0 }
               };
 
-            var ranks = Kata.ComputeRanks(numberOfTeams5, games5);
+            var ranks = Kata.ComputeRanks(numberOfTeams, games);
 
             Display(ranks);
 
-            System.Console.WriteLine(expectedResult5);
+            System.Console.WriteLine(expectedResult);
         }
 
         private static void Display(int[] ranks)
