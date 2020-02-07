@@ -55,24 +55,25 @@ namespace SportsLeague
         private static void UpdateTeamRanks(List<Team> teams)
         {
             int rank = 1;
-            var sortedTeams = teams
-               .OrderByDescending(t => t.Points)
-                .ThenByDescending(x => x.GD)
-                .ThenByDescending(x => x.For)
-                .ToArray();
+            var sortedTeams = teams;
+            sortedTeams.Sort();
+
             int sortedTeamsLength = sortedTeams.Count();
             for (int index = 0; index < sortedTeamsLength; index++)
             {
                 var teamIndex = sortedTeams[index].Id;
                 teams[teamIndex].Rank = rank;
                 var nextIsEqual = (index + 1 < sortedTeamsLength) && IsEqual(sortedTeams[index], sortedTeams[index + 1]);
-                if (nextIsEqual)
+                int rankGap = 0;
+                while (nextIsEqual)
                 {
                     var nextTeamIndex = sortedTeams[index + 1].Id;
                     teams[nextTeamIndex].Rank = rank;
                     index++;
-                    rank++;
+                    nextIsEqual = (index + 1 < sortedTeamsLength) && IsEqual(sortedTeams[index], sortedTeams[index + 1]);
+                    rankGap++;
                 }
+                rank += rankGap;
                 rank++;
             }
         }
