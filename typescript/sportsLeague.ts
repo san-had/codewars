@@ -1,9 +1,8 @@
 export function computeRanks(numberOfTeams: number, games:number[][]): number[] {
 
     let teams = CreateTeams(numberOfTeams);
-    let gamesLength = games.length;
 
-    for (let i = 0; i < gamesLength; i++) {
+    for (let i = 0; i < games.length; i++) {
         let team1 = teams[games[i][0]];
         let team2 = teams[games[i][1]];
 
