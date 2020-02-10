@@ -15,8 +15,8 @@ export function computeRanks(numberOfTeams: number, games:number[][]): number[] 
         UpdateTeam(team1, team1Score, team2Score);
         UpdateTeam(team2, team2Score, team1Score);        
 
-        teams[games[i][0]] = team1;
-        teams[games[i][1]] = team2;
+ /*        teams[games[i][0]] = team1;
+        teams[games[i][1]] = team2; */
     }
 
     let updatedTeams = UpdateTeamRanks(teams);
