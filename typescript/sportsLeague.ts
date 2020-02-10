@@ -9,8 +9,11 @@ export function computeRanks(numberOfTeams: number, games:number[][]): number[] 
         let team1Score = games[i][2];
         let team2Score = games[i][3];
 
-        team1 = UpdateTeam(team1, team1Score, team2Score);
-        team2 = UpdateTeam(team2, team2Score, team1Score);
+ /*        team1 = UpdateTeam(team1, team1Score, team2Score);
+        team2 = UpdateTeam(team2, team2Score, team1Score); */
+
+        UpdateTeam(team1, team1Score, team2Score);
+        UpdateTeam(team2, team2Score, team1Score);        
 
         teams[games[i][0]] = team1;
         teams[games[i][1]] = team2;
@@ -75,11 +78,11 @@ function IsEqual(teamA: Team, teamB: Team) {
     return false;
 }
 
-function UpdateTeam(team: Team, vor: number, against: number): Team {
+function UpdateTeam(team: Team, vor: number, against: number) {
     team.Vor += vor;
     team.Against += against;
     team.Points += vor === against ? 1 : vor > against ? 2 : 0;
-    return team;
+    //return team;
 }
 
 function CreateTeams(numberOfTeams: number) {

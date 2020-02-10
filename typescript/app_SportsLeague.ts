@@ -40,11 +40,11 @@ const games2: number[][] =
                const games5: number[][] = 
                [[0, 7, 2, 0]];                
 
-let ranks = computeRanks(numberOfTeams5, games5);
+let ranks = computeRanks(numberOfTeams, games);
 
 displayRanks(ranks);
 
-console.log(expectedResult5);
+console.log(expectedResult);
 
 
 function displayRanks(ranks:number[]) {
