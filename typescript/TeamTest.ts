@@ -8,12 +8,12 @@ export class Team {
     public Rank:number;
 }
 
-function CreateTeams(numberOfTeams: number) {
+export function CreateTeams(numberOfTeams: number) {
     let teamArray: Team[] = new Array<Team>();
     for (let i = 0; i < numberOfTeams; i++) {
         let team: Team = new Team();
         team.Id = i;
-        //team.Vor = 0, team.Against = 0, team.Points = 0, team.Rank = 0;
+        team.Name = "Team" + i.toString();
         teamArray.push(team);
     }
     return teamArray;   
