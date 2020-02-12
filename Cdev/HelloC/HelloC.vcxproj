@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClCompile Include="Greeting.c" />
     <ClCompile Include="Hello.c" />
+    <ClCompile Include="pointers.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
