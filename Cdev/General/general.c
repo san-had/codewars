@@ -7,7 +7,7 @@ int main(void)
 {
 	puts("Hello world!");
 
-	unsigned short num = 50;
+	unsigned short num = 10;
 
 	unsigned short* reverse_array = reverse_seq(num);
 
@@ -16,6 +16,7 @@ int main(void)
 		unsigned short item = *(reverse_array + i);
 		printf("%d\n", item);
 	}
+	free(reverse_array);
 }
 
 unsigned short* reverse_seq(unsigned short num)
@@ -25,18 +26,15 @@ unsigned short* reverse_seq(unsigned short num)
 		return NULL;
 	}
 
-	unsigned short length = num;
-
-	static unsigned short* reverse_array;
+	unsigned short* reverse_array;
 	reverse_array = (unsigned short*)malloc(sizeof(unsigned short) * num);
 
-	for (size_t i = 0; i < length; i++)
+	for (int i = 0; i < num; i++)
 	{
 		if (reverse_array != NULL)
 		{
 			//reverse_array[i] = num;
-			*(reverse_array + i) = num;
-			num--;
+			*(reverse_array + i) = num - i;
 		}
 	}
 	return reverse_array;
