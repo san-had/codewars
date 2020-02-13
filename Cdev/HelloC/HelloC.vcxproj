@@ -141,6 +141,7 @@
     <ClCompile Include="Greeting.c" />
     <ClCompile Include="Hello.c" />
     <ClCompile Include="pointers.c" />
+    <ClCompile Include="static_learn.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

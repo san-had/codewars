@@ -5,7 +5,7 @@ void double_swap(double* p0, double* p1);
 
 void double_swap_array(double a0[], double a1[]);
 
-int main(void) {
+int pointer_main(void) {
 	double d1 = 5.01;
 	double d2 = 3.12;
 
