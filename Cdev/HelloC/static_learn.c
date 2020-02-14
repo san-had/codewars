@@ -28,7 +28,7 @@ void display_sum()
 	printf("%d\n", sum(50));
 }
 
-int main()
+int static_main()
 {
 	//display_runner();
 

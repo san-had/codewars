@@ -27,5 +27,8 @@
     <ClCompile Include="static_learn.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="multi_array_learn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

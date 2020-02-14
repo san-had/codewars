@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClCompile Include="Greeting.c" />
     <ClCompile Include="Hello.c" />
+    <ClCompile Include="multi_array_learn.c" />
     <ClCompile Include="pointers.c" />
     <ClCompile Include="static_learn.c" />
   </ItemGroup>
