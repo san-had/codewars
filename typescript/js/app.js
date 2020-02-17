@@ -1,9 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var TeamTest_1 = require("./TeamTest");
-var TeamTest_2 = require("./TeamTest");
-var team = new TeamTest_2.Team();
-team.Name = "Lemon";
-TeamTest_1.updateTeam(team);
-console.log(team.Name);
+var DivisorsCount_1 = require("./DivisorsCount");
+var n = 11;
+console.log(DivisorsCount_1.divisors(n));
 //# sourceMappingURL=app.js.map
