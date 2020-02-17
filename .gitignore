@@ -330,5 +330,8 @@ ASALocalRun/
 .mfractor/
 
 ## Ignore compiled javascript files
+typescript/js
 *.js
 *.js.map
+
+
