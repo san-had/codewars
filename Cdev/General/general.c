@@ -3,7 +3,7 @@
 
 unsigned short* reverse_seq(unsigned short num);
 
-int main(void)
+int _main_general(void)
 {
 	puts("Hello world!");
 
