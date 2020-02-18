@@ -142,8 +142,10 @@
     <ClCompile Include="Hello.c" />
     <ClCompile Include="multi_array_learn.c" />
     <ClCompile Include="pointers.c" />
+    <ClCompile Include="pointers_learn.c" />
     <ClCompile Include="static_learn.c" />
     <ClCompile Include="strings_learn.c" />
+    <ClCompile Include="struct_learn.c" />
     <ClCompile Include="while_learn.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
