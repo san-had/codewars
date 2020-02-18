@@ -7,11 +7,11 @@ export function calculateDamage(yourType:string, opponentType:string, attack:num
 function getEffectiveness(yourType:string, opponentType:string): number {
 
     let effectiveness: number = 1;
-    let effectivenesses = loadEffectiveness();
+    let effectivenessList = loadEffectiveness();
     let key: string = yourType + "-" + opponentType;
 
-    if (effectivenesses[key] !== undefined) {
-        effectiveness = effectivenesses[key];
+    if (effectivenessList[key] !== undefined) {
+        effectiveness = effectivenessList[key];
     }
     
     return effectiveness;
