@@ -21,5 +21,8 @@
     <ClCompile Include="CountDivisor.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pokemon.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

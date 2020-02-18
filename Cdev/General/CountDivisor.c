@@ -3,7 +3,7 @@
 
 int divisors(int n);
 
-void main(void)
+void _main_CountDivisors(void)
 {
 	int n = 4096;
 
