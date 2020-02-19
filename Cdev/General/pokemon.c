@@ -3,18 +3,30 @@
 
 int calculate_damage(const char* your_type, const char* opponent_type, int attack, int damage);
 
-int get_effectiveness(const char* your_type, const char* opponent_type);
+double get_effectiveness(const char* your_type, const char* opponent_type);
 
 typedef struct {
 	char* key;
-	int value;
+	double value;
 } effectiveness;
 
 effectiveness* load_effectiveness();
 
+char* get_key(const char* your_type, const char* opponent_type);
+
 int main(void)
 {
 	printf("%d\n", calculate_damage("fire", "water", 100, 100));
+	printf("%d\n", calculate_damage("grass", "water", 100, 100));
+	printf("%d\n", calculate_damage("electric", "fire", 100, 100));
+	printf("%d\n", calculate_damage("grass", "electric", 57, 19));
+	printf("%d\n", calculate_damage("grass", "water", 40, 40));
+	printf("%d\n", calculate_damage("grass", "fire", 35, 5));
+	printf("%d\n", calculate_damage("fire", "electric", 10, 2));
+
+	printf("%d\n", calculate_damage("fire", "water", 100, 100));
+	printf("%d\n", calculate_damage("electric", "fire", 24, 1));
+	printf("%d\n", calculate_damage("electric", "grass", 84, 1));
 }
 
 int calculate_damage(const char* your_type, const char* opponent_type, int attack, int defense)
@@ -23,14 +35,11 @@ int calculate_damage(const char* your_type, const char* opponent_type, int attac
 	return damage;
 }
 
-int get_effectiveness(const char* your_type, const char* opponent_type)
+double get_effectiveness(const char* your_type, const char* opponent_type)
 {
-	int e_value = 1;
+	double e_value = 1;
 
-	char* key = 0;
-	strcat(key, "huhu", 20);
-	strcat(key, "-", 20);
-	strcat(key, opponent_type, 20);
+	char* key = get_key(your_type, opponent_type);
 
 	effectiveness* effectivenesses = load_effectiveness();
 
@@ -50,41 +59,61 @@ int get_effectiveness(const char* your_type, const char* opponent_type)
 	return e_value;
 }
 
+char* get_key(const char* your_type, const char* opponent_type)
+{
+	char* key = malloc(sizeof(char) * 30);
+	strcpy(key, your_type);
+	strcat(key, "-");
+	strcat(key, opponent_type);
+	return key;
+}
+
 effectiveness* load_effectiveness()
 {
-	effectiveness effectiveness_array[8];
-	effectiveness e;
-	e.key = "electric-water";
-	e.value = 2;
-	effectiveness_array[0] = e;
+	//effectiveness* effectiveness_array = malloc(sizeof(effectiveness) * 8);
+	//effectiveness e;
+	//e.key = "electric-water";
+	//e.value = 2;
+	//effectiveness_array = &e;
 
-	e.key = "fire-grass";
-	e.value = 2;
-	effectiveness_array[0] = e;
+	//e.key = "fire-grass";
+	//e.value = 2;
+	//effectiveness_array[1] = e;
 
-	e.key = "water-fire";
-	e.value = 2;
-	effectiveness_array[0] = e;
+	//e.key = "water-fire";
+	//e.value = 2;
+	//effectiveness_array[2] = e;
 
-	e.key = "grass-water";
-	e.value = 2;
-	effectiveness_array[0] = e;
+	//e.key = "grass-water";
+	//e.value = 2;
+	//effectiveness_array[3] = e;
 
-	e.key = "water-electric";
-	e.value = 0.5;
-	effectiveness_array[0] = e;
+	//e.key = "water-electric";
+	//e.value = 0.5;
+	//effectiveness_array[4] = e;
 
-	e.key = "grass-fire";
-	e.value = 0.5;
-	effectiveness_array[0] = e;
+	//e.key = "grass-fire";
+	//e.value = 0.5;
+	//effectiveness_array[5] = e;
 
-	e.key = "fire-water";
-	e.value = 0.5;
-	effectiveness_array[0] = e;
+	//e.key = "fire-water";
+	//e.value = 0.5;
+	//effectiveness_array[6] = e;
 
-	e.key = "water-grass";
-	e.value = 0.5;
-	effectiveness_array[0] = e;
+	//e.key = "water-grass";
+	//e.value = 0.5;
+	//effectiveness_array[7] = e;
+
+	effectiveness effectiveness_array[8] = {
+		{"electric-water", 2},
+		{"fire-grass", 2},
+		{"water-fire", 2},
+		{"grass-water", 2},
+		{"water-electric", 0.5},
+		{"grass-fire", 0.5},
+		{"fire-water", 0.5},
+		{"water-grass", 0.5}
+	};
 
 	return effectiveness_array;
 }
