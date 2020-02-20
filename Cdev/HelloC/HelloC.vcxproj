@@ -138,6 +138,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="arrays_pointers_learn.c" />
+    <ClCompile Include="dynamic_learn.c" />
+    <ClCompile Include="func_arg_learn.c" />
     <ClCompile Include="Greeting.c" />
     <ClCompile Include="Hello.c" />
     <ClCompile Include="multi_array_learn.c" />

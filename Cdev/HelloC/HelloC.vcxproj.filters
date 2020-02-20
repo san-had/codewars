@@ -42,5 +42,14 @@
     <ClCompile Include="struct_learn.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="func_arg_learn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dynamic_learn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="arrays_pointers_learn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

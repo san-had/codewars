@@ -3,7 +3,7 @@
 
 char* concat(const char* str1, const char* str2);
 
-int main(void)
+int _strings_main(void)
 {
 	//char* name = "John";
 
