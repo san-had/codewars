@@ -1,0 +1,2 @@
+﻿https://michaelscodingspot.com/pipeline-pattern-implementations-csharp/
+
