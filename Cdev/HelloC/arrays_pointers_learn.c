@@ -5,6 +5,8 @@ void dynamic_allocation(int n);
 
 void dynamic_allocation_md_array(int rows, int columns);
 
+void pascal_triangle(int row_num);
+
 int main(void)
 {
 	char c = 'A';
@@ -30,7 +32,9 @@ int main(void)
 	}
 
 	//dynamic_allocation(5);
-	dynamic_allocation_md_array(2, 5);
+	//dynamic_allocation_md_array(2, 5);
+
+	pascal_triangle(3);
 
 	return EXIT_SUCCESS;
 }
@@ -92,4 +96,37 @@ void dynamic_allocation_md_array(int rows, int columns)
 	free(pvowels[1]);
 
 	free(pvowels);
+}
+
+void pascal_triangle(int row_num)
+{
+	int** triangle = (int**)malloc(sizeof(int) * row_num);
+
+	for (int i = 0; i < row_num; i++)
+	{
+		triangle[i] = (int*)malloc((i + 1) * sizeof(int));
+	}
+
+	triangle[0][0] = 1;
+	triangle[1][0] = 1;
+	triangle[1][1] = 1;
+	triangle[2][0] = 1;
+	triangle[2][1] = 2;
+	triangle[2][2] = 1;
+
+	for (int i = 0; i < row_num; i++)
+	{
+		for (int j = 0; j <= i; j++)
+		{
+			printf("%d", triangle[i][j]);
+		}
+		printf("\n");
+	}
+
+	for (int i = 0; i < row_num; i++)
+	{
+		free(triangle[i]);
+	}
+
+	//free(triangle);
 }
