@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Threading.Tasks;
 
 namespace PipelineExample
@@ -33,7 +34,7 @@ namespace PipelineExample
             int bufferIndex = 0;
             foreach (var pipelineStep in _pipelineSteps)
             {
-                var bufferIndexLocal = bufferIndex;
+                int bufferIndexLocal = bufferIndex;
                 Task.Run(() =>
                 {
                     foreach (var input in _buffers[bufferIndexLocal].GetConsumingEnumerable())
