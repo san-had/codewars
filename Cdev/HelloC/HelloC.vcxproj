@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClCompile Include="arrays_pointers_learn.c" />
     <ClCompile Include="dynamic_learn.c" />
+    <ClCompile Include="factorial.c" />
     <ClCompile Include="func_arg_learn.c" />
     <ClCompile Include="Greeting.c" />
     <ClCompile Include="Hello.c" />

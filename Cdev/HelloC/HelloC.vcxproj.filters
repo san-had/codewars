@@ -51,5 +51,8 @@
     <ClCompile Include="arrays_pointers_learn.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="factorial.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

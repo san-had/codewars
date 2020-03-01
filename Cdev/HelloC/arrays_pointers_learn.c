@@ -7,7 +7,7 @@ void dynamic_allocation_md_array(int rows, int columns);
 
 void pascal_triangle(int row_num);
 
-int main(void)
+int arrays_pointers_main(void)
 {
 	char c = 'A';
 	char* pc = &c;
