@@ -54,5 +54,8 @@
     <ClCompile Include="factorial.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="linked_list_learn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

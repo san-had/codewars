@@ -144,6 +144,7 @@
     <ClCompile Include="func_arg_learn.c" />
     <ClCompile Include="Greeting.c" />
     <ClCompile Include="Hello.c" />
+    <ClCompile Include="linked_list_learn.c" />
     <ClCompile Include="multi_array_learn.c" />
     <ClCompile Include="pointers.c" />
     <ClCompile Include="pointers_learn.c" />
