@@ -20,7 +20,7 @@ int remove_by_index(node_t** head, int n);
 
 int remove_by_value(node_t** head, int val);
 
-int main(void) {
+int linked_list_main(void) {
 	node_t* head = NULL;
 
 	head = (node_t*)malloc(sizeof(node_t));
