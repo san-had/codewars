@@ -8,21 +8,32 @@ typedef struct node
 	struct node* right;
 } node_t;
 
-void insert(node_t* tree, int val);
+void insert_tree(node_t* tree, int val);
 void print_tree(node_t* current);
 void printDFS(node_t* current);
 
 int main(void)
 {
 	node_t* test_list = (node_t*)malloc(sizeof(node_t));
-	test_list->val = 0;
-	test_list->left = NULL;
-	test_list->right = NULL;
+	if (test_list != NULL)
+	{
+		test_list->val = 0;
+		test_list->left = NULL;
+		test_list->right = NULL;
+
+		insert_tree(test_list, 5);
+		insert_tree(test_list, 8);
+		insert_tree(test_list, 4);
+		insert_tree(test_list, 3);
+	}
+
+	printDFS(test_list);
+	printf("\n");
 
 	return EXIT_SUCCESS;
 }
 
-void insert(node_t* tree, int val)
+void insert_tree(node_t* tree, int val)
 {
 	if (tree->val == 0)
 	{
@@ -34,7 +45,7 @@ void insert(node_t* tree, int val)
 		{
 			if (tree->left != NULL)
 			{
-				insert(tree->left, val);
+				insert_tree(tree->left, val);
 			}
 			else
 			{
@@ -51,7 +62,7 @@ void insert(node_t* tree, int val)
 		{
 			if (tree->right != NULL)
 			{
-				insert(tree->right, val);
+				insert_tree(tree->right, val);
 			}
 			else
 			{
@@ -73,13 +84,13 @@ void printDFS(node_t* current)
 	{
 		return;
 	}
-	if (current->left != NULL)
-	{
-		printDFS(current->left);
-	}
 	if (current != NULL)
 	{
 		printf("%d ", current->val);
+	}
+	if (current->left != NULL)
+	{
+		printDFS(current->left);
 	}
 	if (current->right != NULL)
 	{
