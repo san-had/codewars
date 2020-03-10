@@ -12,7 +12,7 @@ void insert_tree(node_t* tree, int val);
 void print_tree(node_t* current);
 void printDFS(node_t* current);
 
-int main(void)
+int binary_tree_main(void)
 {
 	node_t* test_list = (node_t*)malloc(sizeof(node_t));
 	if (test_list != NULL)
