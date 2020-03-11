@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 union char_store {
-	char chars[24];
 	int ints[6];
+	char chars[21];
 };
 
 int main(void)
