@@ -63,5 +63,8 @@
     <ClCompile Include="union_learn.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="union_exercise.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -152,6 +152,7 @@
     <ClCompile Include="static_learn.c" />
     <ClCompile Include="strings_learn.c" />
     <ClCompile Include="struct_learn.c" />
+    <ClCompile Include="union_exercise.c" />
     <ClCompile Include="union_learn.c" />
     <ClCompile Include="while_learn.c" />
   </ItemGroup>
