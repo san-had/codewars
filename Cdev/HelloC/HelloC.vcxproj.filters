@@ -66,5 +66,11 @@
     <ClCompile Include="union_exercise.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pointer_arithmetics_learn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pointer_arithmetics_exercise.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

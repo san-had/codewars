@@ -6,7 +6,7 @@ union char_store {
 	char chars[21];
 };
 
-int main(void)
+int union_exercise_main(void)
 {
 	union char_store intCharacters = { { 1853169737, 1936876900, 1684955508, 1768838432, 561213039, 0} };
 
