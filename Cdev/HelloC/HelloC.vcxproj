@@ -142,6 +142,7 @@
     <ClCompile Include="binary_tree.c" />
     <ClCompile Include="dynamic_learn.c" />
     <ClCompile Include="factorial.c" />
+    <ClCompile Include="function_pointers_learn.c" />
     <ClCompile Include="func_arg_learn.c" />
     <ClCompile Include="Greeting.c" />
     <ClCompile Include="Hello.c" />

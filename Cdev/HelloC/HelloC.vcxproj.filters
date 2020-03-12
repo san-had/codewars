@@ -72,5 +72,8 @@
     <ClCompile Include="pointer_arithmetics_exercise.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="function_pointers_learn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

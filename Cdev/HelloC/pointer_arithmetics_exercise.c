@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(void)
+int pointer_arithmetic_exec_main(void)
 {
 	int intarray[5] = { 10, 20, 30, 40, 50 };
 
