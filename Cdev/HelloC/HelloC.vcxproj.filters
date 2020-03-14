@@ -75,5 +75,11 @@
     <ClCompile Include="function_pointers_learn.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="function_pointer_exercise.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bitmasks_learn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
