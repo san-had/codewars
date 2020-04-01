@@ -73,7 +73,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameEqual24", "GameEqual24\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackJack", "BlackJack\BlackJack.csproj", "{19411850-D263-49B2-86D3-7EF8B8AF52D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsLeague", "SportsLeague\SportsLeague.csproj", "{1B3AC13F-4837-4470-86DF-9170FF82ECE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsLeague", "SportsLeague\SportsLeague.csproj", "{1B3AC13F-4837-4470-86DF-9170FF82ECE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphabetWars", "AlphabetWars\AlphabetWars.csproj", "{BCE2F549-F29A-4850-950A-3FF4EA4EC084}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -225,6 +227,10 @@ Global
 		{1B3AC13F-4837-4470-86DF-9170FF82ECE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B3AC13F-4837-4470-86DF-9170FF82ECE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B3AC13F-4837-4470-86DF-9170FF82ECE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCE2F549-F29A-4850-950A-3FF4EA4EC084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE2F549-F29A-4850-950A-3FF4EA4EC084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE2F549-F29A-4850-950A-3FF4EA4EC084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCE2F549-F29A-4850-950A-3FF4EA4EC084}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
