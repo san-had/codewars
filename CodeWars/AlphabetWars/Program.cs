@@ -21,7 +21,36 @@ namespace AlphabetWars
                 "##a[a]b[c]#"
             };
 
-            Console.WriteLine(Kata.AlphabetWar(testCases[1]));
+            string[] expectedResults =
+            {
+                "abdefghijk",
+                "fgh",
+                string.Empty,
+                string.Empty,
+                "mn",
+                "mn",
+                "mn",
+                "ac",
+                "d",
+                "abc",
+                "c"
+            };
+
+            //Console.WriteLine(Kata.AlphabetWar(testCases[0]));
+
+            for (int i = 0; i < testCases.Length; i++)
+            {
+                string actual = Kata.AlphabetWar(testCases[i]);
+
+                if (expectedResults[i] != actual)
+                {
+                    Console.WriteLine($"Expected: { expectedResults[i]} != Actual: { actual}");
+                }
+                else
+                {
+                    Console.WriteLine($"Testcase: { i.ToString()} { testCases[i]}");
+                }
+            }
         }
     }
 }

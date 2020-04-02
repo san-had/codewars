@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace AlphabetWars
 {
@@ -28,15 +29,30 @@ namespace AlphabetWars
 
         private static string Strike(string battlefield)
         {
+            List<int> removeCharPositions = new List<int>();
             int strikePosition = battlefield.IndexOf('#');
-            battlefield = battlefield.Remove(strikePosition, 1);
-            battlefield = RemoveCharsOutsideOfShelter(battlefield);
-            battlefield = RemoveShelters(battlefield, strikePosition);
+            removeCharPositions.Add(strikePosition);
+            //battlefield = battlefield.Remove(strikePosition, 1);
+            removeCharPositions.AddRange(RemoveCharsOutsideOfShelter(battlefield));
+            removeCharPositions.AddRange(RemoveShelters(battlefield, strikePosition));
+            removeCharPositions.Sort();
+            removeCharPositions = removeCharPositions.Distinct().ToList();
+            battlefield = RemoveChars(removeCharPositions, battlefield);
             return battlefield;
         }
 
-        private static string RemoveCharsOutsideOfShelter(string battlefield)
+        private static string RemoveChars(List<int> removeCharPositions, string battlefield)
         {
+            for (int i = removeCharPositions.Count - 1; i >= 0; i--)
+            {
+                battlefield = battlefield.Remove(removeCharPositions[i], 1);
+            }
+            return battlefield;
+        }
+
+        private static List<int> RemoveCharsOutsideOfShelter(string battlefield)
+        {
+            List<int> removePositions = new List<int>();
             bool deleteChars = true;
             for (int i = battlefield.Length - 1; i >= 0; i--)
             {
@@ -52,24 +68,33 @@ namespace AlphabetWars
                 }
                 if (deleteChars && battlefield[i] != '#')
                 {
-                    battlefield = battlefield.Remove(i, 1);
+                    removePositions.Add(i);
                 }
             }
-            return battlefield;
+            return removePositions;
         }
 
-        private static string RemoveShelters(string battlefield, int strikePosition)
+        private static List<int> RemoveShelters(string battlefield, int strikePosition)
         {
+            List<int> removePositions = new List<int>();
+            if (battlefield.IndexOf('[') == -1)
+            {
+                return removePositions;
+            }
             int previousShelterBeginPosition = GetPreviousShelterBeginPosition(battlefield, strikePosition);
             int previousShelterEndPosition = battlefield.IndexOf(']', previousShelterBeginPosition);
-            battlefield = battlefield.Remove(previousShelterEndPosition, 1);
-            battlefield = battlefield.Remove(previousShelterBeginPosition, 1);
+            removePositions.Add(previousShelterEndPosition);
+            removePositions.Add(previousShelterBeginPosition);
+            //battlefield = battlefield.Remove(previousShelterEndPosition, 1);
+            //battlefield = battlefield.Remove(previousShelterBeginPosition, 1);
 
             int nextShelterBeginPosition = battlefield.IndexOf('[', strikePosition);
             int nextShelterEndPosition = battlefield.IndexOf(']', strikePosition);
-            battlefield = battlefield.Remove(nextShelterEndPosition, 1);
-            battlefield = battlefield.Remove(nextShelterBeginPosition, 1);
-            return battlefield;
+            removePositions.Add(nextShelterEndPosition);
+            removePositions.Add(nextShelterBeginPosition);
+            //battlefield = battlefield.Remove(nextShelterEndPosition, 1);
+            //battlefield = battlefield.Remove(nextShelterBeginPosition, 1);
+            return removePositions;
         }
 
         private static int GetPreviousShelterBeginPosition(string battlefield, int strikePosition)
