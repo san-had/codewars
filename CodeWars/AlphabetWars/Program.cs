@@ -18,7 +18,8 @@ namespace AlphabetWars
                 "[a]#[b]#[c]",
                 "[a]#b#[c][d]",
                 "[a][b][c]",
-                "##a[a]b[c]#"
+                "##a[a]b[c]#",
+                "[ab]adfd[dd]##[abe]dedf[ijk]d#d[h]#"
             };
 
             string[] expectedResults =
@@ -33,10 +34,11 @@ namespace AlphabetWars
                 "ac",
                 "d",
                 "abc",
-                "c"
+                "c",
+                "abijk"
             };
 
-            //Console.WriteLine(Kata.AlphabetWar(testCases[0]));
+            //Console.WriteLine(Kata.AlphabetWar(testCases[10]));
 
             for (int i = 0; i < testCases.Length; i++)
             {

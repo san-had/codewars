@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AlphabetWars
@@ -16,25 +17,22 @@ namespace AlphabetWars
                 return battlefield.Replace("[", string.Empty).Replace("]", string.Empty);
             }
 
-            if (strikeCount >= shelterCount)
-            {
-                for (int i = 0; i < strikeCount; i++)
-                {
-                    battlefield = Strike(battlefield);
-                }
-            }
+            battlefield = Strike(battlefield, strikeCount);
 
             return battlefield;
         }
 
-        private static string Strike(string battlefield)
+        private static string Strike(string battlefield, int strikeCount)
         {
             List<int> removeCharPositions = new List<int>();
-            int strikePosition = battlefield.IndexOf('#');
-            removeCharPositions.Add(strikePosition);
+            //int strikePosition = battlefield.IndexOf('#');
+            //removeCharPositions.Add(strikePosition);
             //battlefield = battlefield.Remove(strikePosition, 1);
             removeCharPositions.AddRange(RemoveCharsOutsideOfShelter(battlefield));
-            removeCharPositions.AddRange(RemoveShelters(battlefield, strikePosition));
+            if (strikeCount != 1)
+            {
+                removeCharPositions.AddRange(RemoveShelters(battlefield));
+            }
             removeCharPositions.Sort();
             removeCharPositions = removeCharPositions.Distinct().ToList();
             battlefield = RemoveChars(removeCharPositions, battlefield);
@@ -74,33 +72,65 @@ namespace AlphabetWars
             return removePositions;
         }
 
-        private static List<int> RemoveShelters(string battlefield, int strikePosition)
+        private static List<int> RemoveShelters(string battlefield)
         {
             List<int> removePositions = new List<int>();
             if (battlefield.IndexOf('[') == -1)
             {
                 return removePositions;
             }
-            int previousShelterBeginPosition = GetPreviousShelterBeginPosition(battlefield, strikePosition);
-            int previousShelterEndPosition = battlefield.IndexOf(']', previousShelterBeginPosition);
-            removePositions.Add(previousShelterEndPosition);
-            removePositions.Add(previousShelterBeginPosition);
-            //battlefield = battlefield.Remove(previousShelterEndPosition, 1);
-            //battlefield = battlefield.Remove(previousShelterBeginPosition, 1);
+            List<Tuple<int, int>> shelters = GetShelters(battlefield);
+            List<int> strikes = GetAllStrike(battlefield);
 
-            int nextShelterBeginPosition = battlefield.IndexOf('[', strikePosition);
-            int nextShelterEndPosition = battlefield.IndexOf(']', strikePosition);
-            removePositions.Add(nextShelterEndPosition);
-            removePositions.Add(nextShelterBeginPosition);
-            //battlefield = battlefield.Remove(nextShelterEndPosition, 1);
-            //battlefield = battlefield.Remove(nextShelterBeginPosition, 1);
+            for (int i = 0; i < shelters.Count; i++)
+            {
+                if (i != 0)
+                {
+                    var previousShelterEnd = shelters[i - 1].Item2;
+                    var currentShelterBegin = shelters[i].Item1;
+
+                    var nextShelterBegin = shelters[i + 1].Item1;
+                    var currentShelterEnd = shelters[i].Item2;
+                }
+            }
+
             return removePositions;
+        }
+
+        private static List<int> GetAllStrike(string battlefield)
+        {
+            List<int> strikes = new List<int>();
+
+            int strikePosition = 0;
+
+            while ((strikePosition = battlefield.IndexOf('#', strikePosition)) != -1)
+            {
+                strikes.Add(strikePosition);
+            }
+            return strikes;
+        }
+
+        private static List<Tuple<int, int>> GetShelters(string battlefield)
+        {
+            List<Tuple<int, int>> shelters = new List<Tuple<int, int>>();
+
+            int shelterBeginPosition = 0;
+            int shelterEndPosition = 0;
+
+            while ((shelterBeginPosition = battlefield.IndexOf('[', shelterBeginPosition)) != -1)
+            {
+                while ((shelterEndPosition = battlefield.IndexOf(']', shelterEndPosition)) != -1)
+                {
+                    shelters.Add(new Tuple<int, int>(shelterBeginPosition, shelterEndPosition));
+                }
+            }
+            return shelters;
         }
 
         private static int GetPreviousShelterBeginPosition(string battlefield, int strikePosition)
         {
             int previousShelterBeginPosition = strikePosition;
-            for (int i = strikePosition; i > 0; i--)
+            for (int i = strikePosition; i >= 0; i--)
             {
                 if (battlefield[i] == '[')
                 {
