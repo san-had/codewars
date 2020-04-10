@@ -38,7 +38,7 @@ namespace AlphabetWars
                 "abijk"
             };
 
-            //Console.WriteLine(Kata.AlphabetWar(testCases[10]));
+            //Console.WriteLine(Kata.AlphabetWar(testCases[11]));
 
             for (int i = 0; i < testCases.Length; i++)
             {
@@ -46,11 +46,11 @@ namespace AlphabetWars
 
                 if (expectedResults[i] != actual)
                 {
-                    Console.WriteLine($"Expected: { expectedResults[i]} != Actual: { actual}");
+                    Console.WriteLine($"Failed Testcase:{i} Expected: {expectedResults[i]} != Actual: { actual}");
                 }
                 else
                 {
-                    Console.WriteLine($"Testcase: { i.ToString()} { testCases[i]}");
+                    Console.WriteLine($"Passed: Testcase:{i} { testCases[i]}");
                 }
             }
         }

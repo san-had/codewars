@@ -29,10 +29,12 @@ namespace AlphabetWars
             //removeCharPositions.Add(strikePosition);
             //battlefield = battlefield.Remove(strikePosition, 1);
             removeCharPositions.AddRange(RemoveCharsOutsideOfShelter(battlefield));
-            if (strikeCount != 1)
+            if (strikeCount > 1)
             {
                 removeCharPositions.AddRange(RemoveShelters(battlefield));
             }
+            removeCharPositions.AddRange(GetAllStrike(battlefield));
+            removeCharPositions.AddRange(GetAllShelterPosition(battlefield));
             removeCharPositions.Sort();
             removeCharPositions = removeCharPositions.Distinct().ToList();
             battlefield = RemoveChars(removeCharPositions, battlefield);
@@ -84,16 +86,57 @@ namespace AlphabetWars
 
             for (int i = 0; i < shelters.Count; i++)
             {
+                int previousShelterEnd = 0;
+
                 if (i != 0)
                 {
-                    var previousShelterEnd = shelters[i - 1].Item2;
-                    var currentShelterBegin = shelters[i].Item1;
+                    previousShelterEnd = shelters[i - 1].Item2;
+                }
 
-                    var nextShelterBegin = shelters[i + 1].Item1;
-                    var currentShelterEnd = shelters[i].Item2;
+                var currentShelterBegin = shelters[i].Item1;
+                var currentShelterEnd = shelters[i].Item2;
+
+                bool isStrikeLeft = strikes.Any(x => x >= previousShelterEnd && x < currentShelterBegin);
+
+                bool isMoreStrikeLeft = isStrikeLeft && strikes.Count(x => x >= previousShelterEnd && x < currentShelterBegin) > 1;
+
+                if (isMoreStrikeLeft)
+                {
+                    removePositions.AddRange(RemoveShelter(currentShelterBegin, currentShelterEnd));
+                }
+
+                int nextShelterBegin;
+                if (i == shelters.Count - 1)
+                {
+                    nextShelterBegin = battlefield.Length - 1;
+                }
+                else
+                {
+                    nextShelterBegin = shelters[i + 1].Item1;
+                }
+
+                bool isStrikeRight = strikes.Any(x => x > currentShelterEnd && x <= nextShelterBegin);
+
+                bool isMoreStrikeRight = isStrikeRight && strikes.Count(x => x > currentShelterEnd && x <= nextShelterBegin) > 1;
+
+                if (isStrikeLeft && isStrikeRight || isMoreStrikeRight)
+                {
+                    removePositions.AddRange(RemoveShelter(currentShelterBegin, currentShelterEnd));
                 }
             }
 
+            return removePositions;
+        }
+
+        private static List<int> RemoveShelter(int currentShelterBegin, int currentShelterEnd)
+        {
+            List<int> removePositions = new List<int>();
+
+            int length = currentShelterEnd + 1;
+            for (int index = currentShelterBegin; index < length; index++)
+            {
+                removePositions.Add(index);
+            }
             return removePositions;
         }
 
@@ -101,12 +144,14 @@ namespace AlphabetWars
         {
             List<int> strikes = new List<int>();
 
-            int strikePosition = 0;
-
-            while ((strikePosition = battlefield.IndexOf('#', strikePosition)) != -1)
+            for (int i = 0; i < battlefield.Length; i++)
             {
-                strikes.Add(strikePosition);
+                if (battlefield[i] == '#')
+                {
+                    strikes.Add(i);
+                }
             }
+
             return strikes;
         }
 
@@ -117,27 +162,34 @@ namespace AlphabetWars
             int shelterBeginPosition = 0;
             int shelterEndPosition = 0;
 
-            while ((shelterBeginPosition = battlefield.IndexOf('[', shelterBeginPosition)) != -1)
-            {
-                while ((shelterEndPosition = battlefield.IndexOf(']', shelterEndPosition)) != -1)
-                {
-                    shelters.Add(new Tuple<int, int>(shelterBeginPosition, shelterEndPosition));
-                }
-            }
-            return shelters;
-        }
-
-        private static int GetPreviousShelterBeginPosition(string battlefield, int strikePosition)
-        {
-            int previousShelterBeginPosition = strikePosition;
-            for (int i = strikePosition; i >= 0; i--)
+            for (int i = 0; i < battlefield.Length; i++)
             {
                 if (battlefield[i] == '[')
                 {
-                    previousShelterBeginPosition = i;
+                    shelterBeginPosition = i;
+                    continue;
+                }
+                if (battlefield[i] == ']')
+                {
+                    shelterEndPosition = i;
+                    shelters.Add(new Tuple<int, int>(shelterBeginPosition, shelterEndPosition));
                 }
             }
-            return previousShelterBeginPosition;
+
+            return shelters;
+        }
+
+        private static List<int> GetAllShelterPosition(string battleField)
+        {
+            List<int> shelterPositions = new List<int>();
+            for (int i = 0; i < battleField.Length; i++)
+            {
+                if (battleField[i] == '[' || battleField[i] == ']')
+                {
+                    shelterPositions.Add(i);
+                }
+            }
+            return shelterPositions;
         }
     }
 }
