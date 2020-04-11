@@ -10,8 +10,6 @@ namespace AlphabetWars
         {
             int strikeCount = battlefield.Where(c => c == '#').Count();
 
-            int shelterCount = battlefield.Where(c => c == '[').Count();
-
             if (strikeCount == 0)
             {
                 return battlefield.Replace("[", string.Empty).Replace("]", string.Empty);
@@ -25,15 +23,12 @@ namespace AlphabetWars
         private static string Strike(string battlefield, int strikeCount)
         {
             List<int> removeCharPositions = new List<int>();
-            //int strikePosition = battlefield.IndexOf('#');
-            //removeCharPositions.Add(strikePosition);
-            //battlefield = battlefield.Remove(strikePosition, 1);
             removeCharPositions.AddRange(RemoveCharsOutsideOfShelter(battlefield));
             if (strikeCount > 1)
             {
                 removeCharPositions.AddRange(RemoveShelters(battlefield));
             }
-            removeCharPositions.AddRange(GetAllStrike(battlefield));
+            removeCharPositions.AddRange(GetAllStrikePosition(battlefield));
             removeCharPositions.AddRange(GetAllShelterPosition(battlefield));
             removeCharPositions.Sort();
             removeCharPositions = removeCharPositions.Distinct().ToList();
@@ -82,7 +77,7 @@ namespace AlphabetWars
                 return removePositions;
             }
             List<Tuple<int, int>> shelters = GetShelters(battlefield);
-            List<int> strikes = GetAllStrike(battlefield);
+            List<int> strikes = GetAllStrikePosition(battlefield);
 
             for (int i = 0; i < shelters.Count; i++)
             {
@@ -140,7 +135,7 @@ namespace AlphabetWars
             return removePositions;
         }
 
-        private static List<int> GetAllStrike(string battlefield)
+        private static List<int> GetAllStrikePosition(string battlefield)
         {
             List<int> strikes = new List<int>();
 
