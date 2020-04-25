@@ -75,7 +75,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackJack", "BlackJack\Blac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsLeague", "SportsLeague\SportsLeague.csproj", "{1B3AC13F-4837-4470-86DF-9170FF82ECE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphabetWars", "AlphabetWars\AlphabetWars.csproj", "{BCE2F549-F29A-4850-950A-3FF4EA4EC084}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlphabetWars", "AlphabetWars\AlphabetWars.csproj", "{BCE2F549-F29A-4850-950A-3FF4EA4EC084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestTravel", "BestTravel\BestTravel.csproj", "{760A5CFB-225D-475E-A8A5-076C541E25C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -231,6 +233,10 @@ Global
 		{BCE2F549-F29A-4850-950A-3FF4EA4EC084}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCE2F549-F29A-4850-950A-3FF4EA4EC084}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCE2F549-F29A-4850-950A-3FF4EA4EC084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{760A5CFB-225D-475E-A8A5-076C541E25C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760A5CFB-225D-475E-A8A5-076C541E25C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760A5CFB-225D-475E-A8A5-076C541E25C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760A5CFB-225D-475E-A8A5-076C541E25C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
