@@ -1,6 +1,5 @@
 def get_min_max(seq):
-    seq.sort()
-    return (seq[0], seq[len(seq) - 1])
+    return min(seq), max(seq)
 
 (min, max) = get_min_max([2,1])
 
