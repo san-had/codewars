@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace NumberZooPatrol
 {
@@ -10,7 +11,7 @@ namespace NumberZooPatrol
             animalsList.AddRange(animals);
             animalsList.Sort();
 
-            int missing = GetMissing(animalsList);
+            int missing = GetMissing2(animalsList);
 
             return missing;
         }
@@ -28,6 +29,11 @@ namespace NumberZooPatrol
             }
 
             return missing;
+        }
+
+        private static int GetMissing2(List<int> animalsList)
+        {
+            return Enumerable.Range(1, animalsList.Count + 1).Except(animalsList).First();
         }
     }
 }
