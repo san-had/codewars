@@ -77,7 +77,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsLeague", "SportsLeagu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlphabetWars", "AlphabetWars\AlphabetWars.csproj", "{BCE2F549-F29A-4850-950A-3FF4EA4EC084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestTravel", "BestTravel\BestTravel.csproj", "{760A5CFB-225D-475E-A8A5-076C541E25C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestTravel", "BestTravel\BestTravel.csproj", "{760A5CFB-225D-475E-A8A5-076C541E25C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberZooPatrol", "NumberZooPatrol\NumberZooPatrol.csproj", "{8D5A4088-210E-4590-8D2C-C7D0288A019A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -237,6 +239,10 @@ Global
 		{760A5CFB-225D-475E-A8A5-076C541E25C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{760A5CFB-225D-475E-A8A5-076C541E25C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{760A5CFB-225D-475E-A8A5-076C541E25C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D5A4088-210E-4590-8D2C-C7D0288A019A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D5A4088-210E-4590-8D2C-C7D0288A019A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D5A4088-210E-4590-8D2C-C7D0288A019A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D5A4088-210E-4590-8D2C-C7D0288A019A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
