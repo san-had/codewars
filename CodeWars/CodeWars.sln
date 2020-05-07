@@ -81,6 +81,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestTravel", "BestTravel\Be
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberZooPatrol", "NumberZooPatrol\NumberZooPatrol.csproj", "{8D5A4088-210E-4590-8D2C-C7D0288A019A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalPoints", "TotalPoints\TotalPoints.csproj", "{914F5F27-C292-434F-A712-08F5019DAEAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -243,6 +245,10 @@ Global
 		{8D5A4088-210E-4590-8D2C-C7D0288A019A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D5A4088-210E-4590-8D2C-C7D0288A019A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D5A4088-210E-4590-8D2C-C7D0288A019A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{914F5F27-C292-434F-A712-08F5019DAEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{914F5F27-C292-434F-A712-08F5019DAEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{914F5F27-C292-434F-A712-08F5019DAEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{914F5F27-C292-434F-A712-08F5019DAEAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
