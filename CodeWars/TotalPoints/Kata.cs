@@ -1,4 +1,6 @@
-﻿namespace TotalPoints
+﻿using System.Linq;
+
+namespace TotalPoints
 {
     public static class Kata
     {
@@ -13,14 +15,18 @@
                 if (score1 == score2)
                 {
                     totalPoints++;
-                    continue;
                 }
-                if (score1 > score2)
+                else if (score1 > score2)
                 {
                     totalPoints += 3;
                 }
             }
             return totalPoints;
+        }
+
+        public static int TotalPoints2(string[] games)
+        {
+            return games.Sum(s => s[0] < s[2] ? 0 : s[0] == s[2] ? 1 : 3);
         }
     }
 }

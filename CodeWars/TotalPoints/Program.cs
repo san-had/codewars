@@ -10,7 +10,7 @@ namespace TotalPoints
 
             string[] pointsArray3 = new[] { "1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:4" };
 
-            int totalPoints = Kata.TotalPoints(pointsArray2);
+            int totalPoints = Kata.TotalPoints2(pointsArray2);
 
             Console.WriteLine($"Total points: {totalPoints}");
         }
