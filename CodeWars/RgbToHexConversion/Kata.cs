@@ -1,4 +1,6 @@
-﻿namespace RgbToHexConversion
+﻿using System;
+
+namespace RgbToHexConversion
 {
     public class Kata
     {
@@ -9,12 +11,7 @@
 
         private static string HexConverter(int input)
         {
-            if (input < 0)
-            {
-                input = 0;
-            }
-
-            return input > 255 ? "FF" : input.ToString("X2");
+            return Math.Clamp(input, 0, 255).ToString("X2");
         }
     }
 }
