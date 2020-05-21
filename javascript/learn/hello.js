@@ -5,6 +5,13 @@ var person =
     Middle: "S.H."
 };
 
+var person2 =
+{
+
+}
 
 
-console.log(person.Middle || "n.a");
+
+console.log(person2.Middle || "n.a");
+
+console.log(person3 && person3.Middle);
