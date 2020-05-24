@@ -1,17 +1,16 @@
-var person = 
-{ 
-    Name: "Sanyi",
-    Age: 54,
-    Middle: "S.H."
-};
-
-var person2 =
-{
-
+function add(a, b) {
+    return a + b;
 }
 
+Function.method('curry', function () {
+    var slice = Array.prototype.slice,
+    args = slice.apply(arguments),
+    that = this;
+    return function () {
+        return that.apply(null, args.concat(slice.apply(arguments)));
+    };
+});
 
+var add1 = add.curry(1);
 
-console.log(person2.Middle || "n.a");
-
-console.log(person3 && person3.Middle);
+console.log(add1(6));
