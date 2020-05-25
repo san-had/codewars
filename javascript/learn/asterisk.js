@@ -1,24 +1,26 @@
 function asteriscIt(n) {
-    var length = n.toString().length;
-    var tmpArray = [];
+    var numbers = Array.isArray(n) ? n.join('') : n.toString();
+    var length = numbers.toString().length;
+    var asteriscStr = "";
     var previous = 0;
     for (var i = 0; i < length; i++) {
       if (i === 0 ) {
-        previous = n.toString()[i];
+        previous = numbers.toString()[i];
       }
       if (i > 0) {
-        current = parseInt(n.toString()[i]);
+        current = parseInt(numbers.toString()[i]);
         if (!(previous % 2) && !(current % 2)) {
-          tmpArray.push("*");
+          asteriscStr += "*";
         }
         previous = current;
       }
-      tmpArray.push(parseInt(n.toString()[i]));
+      asteriscStr += numbers.toString()[i];
      }
-    var result = tmpArray.join('');
-  return result;
+  return asteriscStr;
 };
 
 console.log(asteriscIt([1, 4, 64, 68, 67, 23, 1]));
+
+console.log(asteriscIt(5312708));
 
 //asteriscIt(5312708)
