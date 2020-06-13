@@ -1,4 +1,4 @@
-var greet = () => "hello world!";
+const greet = () => "hello world!";
 
 console.log(greet());
 
