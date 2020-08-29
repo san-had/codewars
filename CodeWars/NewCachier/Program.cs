@@ -8,7 +8,7 @@ namespace NewCachier
         {
             Console.WriteLine("Hello World!");
 
-            var order = Kata.GetOrder("milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza");
+            var order = Kata2.GetOrder("milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza");
 
             Console.WriteLine(order);
         }
