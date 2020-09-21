@@ -1,16 +1,9 @@
-import { calculateDamage } from "./Pokemon";
+function* doSomething() {
+    console.log("Started processing");
+    yield;
+    console.log("Resumed processing");        
+}
 
-// console.log(calculateDamage("fire", "water", 100, 100));
-// console.log(calculateDamage("grass", "water", 100, 100));
-// console.log(calculateDamage("electric", "fire", 100, 100));
-// console.log(calculateDamage("grass", "electric", 57, 19));
-// console.log(calculateDamage("grass", "water", 40, 40));
-// console.log(calculateDamage("grass", "fire", 35, 5));
-// console.log(calculateDamage("fire", "electric", 10, 2));
+var iterator = doSomething();
 
-// console.log(calculateDamage("fire", "water", 100, 100));
-// console.log(calculateDamage("electric", "fire", 24, 1));
-// console.log(calculateDamage("electric", "grass", 84, 1));
-
-console.log(calculateDamage("water", "water", 100, 100));
-console.log(calculateDamage("grass", "grass", 75, 1));
+let value = iterator.next();

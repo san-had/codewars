@@ -87,7 +87,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HappyBirthDay", "HappyBirth
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RgbToHexConversion", "RgbToHexConversion\RgbToHexConversion.csproj", "{E6EAB9F3-BCF4-409E-8805-E6219FF2A479}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbbreviateName", "AbbreviateName\AbbreviateName.csproj", "{FF724E97-10B3-4CDD-975E-94D14422EB20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbbreviateName", "AbbreviateName\AbbreviateName.csproj", "{FF724E97-10B3-4CDD-975E-94D14422EB20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avg", "Avg\Avg.csproj", "{0515E1F5-80C6-49E1-8C9A-E69C02238643}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -267,6 +269,10 @@ Global
 		{FF724E97-10B3-4CDD-975E-94D14422EB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF724E97-10B3-4CDD-975E-94D14422EB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF724E97-10B3-4CDD-975E-94D14422EB20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0515E1F5-80C6-49E1-8C9A-E69C02238643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0515E1F5-80C6-49E1-8C9A-E69C02238643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0515E1F5-80C6-49E1-8C9A-E69C02238643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0515E1F5-80C6-49E1-8C9A-E69C02238643}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
