@@ -1,9 +1,5 @@
-function* doSomething() {
-    console.log("Started processing");
-    yield;
-    console.log("Resumed processing");        
-}
+import { wordValue } from "./WordValue";
 
-var iterator = doSomething();
+var result = wordValue(["abc abc", "abc abc", "abc", "abc"]);
 
-let value = iterator.next();
+console.log(result.join(" "));
