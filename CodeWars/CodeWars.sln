@@ -91,7 +91,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbbreviateName", "Abbreviat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avg", "Avg\Avg.csproj", "{0515E1F5-80C6-49E1-8C9A-E69C02238643}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordValues", "WordValues\WordValues.csproj", "{473C874E-673C-441B-9927-F7EC060F7FF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordValues", "WordValues\WordValues.csproj", "{473C874E-673C-441B-9927-F7EC060F7FF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordPattern", "WordPattern\WordPattern.csproj", "{865DFE6F-80E3-4208-90B8-131F55FD37BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -279,6 +281,10 @@ Global
 		{473C874E-673C-441B-9927-F7EC060F7FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{473C874E-673C-441B-9927-F7EC060F7FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{473C874E-673C-441B-9927-F7EC060F7FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{865DFE6F-80E3-4208-90B8-131F55FD37BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865DFE6F-80E3-4208-90B8-131F55FD37BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865DFE6F-80E3-4208-90B8-131F55FD37BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865DFE6F-80E3-4208-90B8-131F55FD37BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
