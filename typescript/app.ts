@@ -1,5 +1,3 @@
-import { wordValue } from "./WordValue";
+import { wordPattern } from "./WordPattern";
 
-var result = wordValue(["abc abc", "abc abc", "abc", "abc"]);
-
-console.log(result.join(" "));
+console.log(wordPattern("Hippopotomonstrosesquippedaliophobia"));
