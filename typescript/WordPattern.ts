@@ -6,22 +6,12 @@ export function wordPattern(word: string): string {
     let patternList:number[] = [];
     
     let pattern = 0;
-    let prevChar = " ";
     let wordChars = word.split('');
-    for (let index = 0; index < wordChars.length; index++) {        
-        if (index != 0 && prevChar != wordChars[index]) {
-            pattern = Math.max(...patternList) + 1;
+    wordChars.forEach((letter: string) => {
+        if(charStore[letter] === undefined) {
+            charStore[letter] = pattern++;
         }
-        if (charStore[wordChars[index]] === undefined) {
-            charStore[wordChars[index]] = pattern;            
-            patternList.push(pattern);
-        }
-        else
-        {
-            pattern = charStore[wordChars[index]];
-            patternList.push(pattern);
-        }
-        prevChar = wordChars[index];
-    }    
+        patternList.push(charStore[letter]);
+    })
     return patternList.join(".");
 }
