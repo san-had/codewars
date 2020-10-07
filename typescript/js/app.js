@@ -1,5 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var WordPattern_1 = require("./WordPattern");
-console.log(WordPattern_1.wordPattern("Hippopotomonstrosesquippedaliophobia"));
+var MoonRating_1 = require("./MoonRating");
+console.log(MoonRating_1.MoonRating(7.2));
 //# sourceMappingURL=app.js.map

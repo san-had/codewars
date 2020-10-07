@@ -1,3 +1,3 @@
-import { wordPattern } from "./WordPattern";
+import { MoonRating } from "./MoonRating";
 
-console.log(wordPattern("Hippopotomonstrosesquippedaliophobia"));
+console.log(MoonRating(7.2));
