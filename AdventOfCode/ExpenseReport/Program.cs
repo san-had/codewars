@@ -10,18 +10,18 @@ namespace ExpenseReport
         {
             var inputList = ReadReport();
 
-            var resultList = GetTwo(inputList);
+            var resultList = GetThree(inputList);
 
             foreach (var item in resultList)
             {
                 Console.WriteLine(item);
             }
 
-            var finalResult = resultList[0] * resultList[1];
+            var finalResult = resultList[0] * resultList[1] * resultList[2];
 
             Console.WriteLine();
 
-            Console.WriteLine($"Eredmény: {resultList[0]} x {resultList[1]} = {finalResult.ToString()}");
+            Console.WriteLine($"Eredmény: {resultList[0]} x {resultList[1]} x {resultList[2]} = {finalResult}");
         }
 
         private static List<int> GetTwo(List<int> inputList)
@@ -30,12 +30,34 @@ namespace ExpenseReport
 
             for (int i = 0; i < inputList.Count; i++)
             {
-                for (int j = 0; j < inputList.Count; j++)
+                for (int j = i; j < inputList.Count; j++)
                 {
                     if (inputList[i] + inputList[j] == 2020)
                     {
                         result.Add(inputList[i]);
                         result.Add(inputList[j]);
+                    }
+                }
+            }
+            return result;
+        }
+
+        private static List<int> GetThree(List<int> inputList)
+        {
+            var result = new List<int>();
+
+            for (int i = 0; i < inputList.Count; i++)
+            {
+                for (int j = i; j < inputList.Count; j++)
+                {
+                    for (int k = j; k < inputList.Count; k++)
+                    {
+                        if (inputList[i] + inputList[j] + inputList[k] == 2020)
+                        {
+                            result.Add(inputList[i]);
+                            result.Add(inputList[j]);
+                            result.Add(inputList[k]);
+                        }
                     }
                 }
             }
