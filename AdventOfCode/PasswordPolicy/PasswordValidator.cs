@@ -14,5 +14,19 @@ namespace PasswordPolicy
             }
             return isValid;
         }
+
+        public bool IsValidPasswordNew(PasswordDto password)
+        {
+            bool isValid = false;
+
+            bool firstPositionOk = password.Password[password.MinOccurance - 1] == password.Letter;
+            bool lastPositionOk = password.Password[password.MaxOccurance - 1] == password.Letter;
+
+            if ((firstPositionOk && !lastPositionOk) || (!firstPositionOk && lastPositionOk))
+            {
+                isValid = true;
+            }
+            return isValid;
+        }
     }
 }

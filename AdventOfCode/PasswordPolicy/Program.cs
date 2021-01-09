@@ -21,7 +21,7 @@ namespace PasswordPolicy
             int rightPasswordCounter = 0;
             foreach (var password in passwordList)
             {
-                if (passwordValidator.IsValidPassword(password))
+                if (passwordValidator.IsValidPasswordNew(password))
                 {
                     rightPasswordCounter++;
                 }
