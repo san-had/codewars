@@ -26,7 +26,7 @@ namespace PassportProcessing
             int validPassportsNumber = 0;
             foreach (var passport in passports)
             {
-                if (ValidatePassport(passport))
+                if (ProcessPassportValidation(passport))
                 {
                     validPassportsNumber++;
                 }
@@ -34,83 +34,31 @@ namespace PassportProcessing
             return validPassportsNumber;
         }
 
-        private static bool ValidatePassport(Dictionary<string, string> passport)
+        private static bool ProcessPassportValidation(Dictionary<string, string> passport)
         {
-            bool valid = true;
-            foreach (var field in passport)
+            var validator = new BirthYearValidator();
+            validator.SetNext(new ExpirationYearValidator())
+                     .SetNext(new EyeColorValidator())
+                     .SetNext(new HairColorValidator())
+                     .SetNext(new HeightValidator())
+                     .SetNext(new IssueYearValidator())
+                     .SetNext(new PassportIdValidator());
+
+            try
             {
-                switch (field.Key)
-                {
-                    case "byr":
-                        valid = BirthYearValidator.Validate(field.Value);
-                        if (valid == false)
-                        {
-                            return valid;
-                        };
-                        break;
-
-                    case "iyr":
-                        valid = IssueYearValidator.Validate(field.Value);
-                        if (valid == false)
-                        {
-                            return valid;
-                        };
-                        break;
-
-                    case "eyr":
-                        valid = ExpirationYearValidator.Validate(field.Value);
-                        if (valid == false)
-                        {
-                            return valid;
-                        };
-                        break;
-
-                    case "hgt":
-                        valid = HeightValidator.Validate(field.Value);
-                        if (valid == false)
-                        {
-                            return valid;
-                        };
-                        break;
-
-                    case "hcl":
-                        valid = HairColorValidator.Validate(field.Value);
-                        if (valid == false)
-                        {
-                            return valid;
-                        };
-                        break;
-
-                    case "ecl":
-                        valid = EyeColorValidator.Validate(field.Value);
-                        if (valid == false)
-                        {
-                            return valid;
-                        };
-                        break;
-
-                    case "pid":
-                        valid = PassportIdValidator.Validate(field.Value);
-                        if (valid == false)
-                        {
-                            return valid;
-                        };
-                        break;
-
-                    case "cid":
-                        return true;
-
-                    default:
-                        break;
-                }
+                validator.Validate(passport);
             }
-            return valid;
+            catch (ValidationException ex)
+            {
+                System.Console.WriteLine(ex.Message);
+                return false;
+            }
+            return true;
         }
 
         private static List<Dictionary<string, string>> GetParsedPassports(List<string> passports)
         {
             var parsedPassports = new List<Dictionary<string, string>>();
-            var parsedPassport = new Dictionary<string, string>();
 
             foreach (var passport in passports)
             {

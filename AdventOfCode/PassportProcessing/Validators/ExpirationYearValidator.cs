@@ -1,17 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PassportProcessing.Validators
 {
-    public class ExpirationYearValidator
+    public class ExpirationYearValidator : BaseValidator
     {
-        public static bool Validate(string value)
+        public override void Validate(Dictionary<string, string> passport)
         {
+            string key = "eyr";
+            string value = passport[key];
             bool success = Int32.TryParse(value, out int eyr);
             if (success)
             {
-                return eyr >= 2020 && eyr <= 2030;
+                if (eyr >= 2020 && eyr <= 2030)
+                {
+                    base.Validate(passport);
+                }
+                else
+                {
+                    throw new ValidationException($"Invalid eyr value: {value}");
+                }
             }
-            return false;
+            else
+            {
+                throw new ValidationException($"Invalid eyr value: {value}");
+            }
         }
     }
 }

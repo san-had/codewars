@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PassportProcessing.Validators
 {
-    public class HeightValidator
+    public class HeightValidator : BaseValidator
     {
-        public static bool Validate(string value)
+        public override void Validate(Dictionary<string, string> passport)
         {
+            string key = "hgt";
+            string value = passport[key];
+
             int lastTwoIndex = value.Length - 2;
             string measurement = value.Substring(lastTwoIndex);
             string heightString = value.Substring(0, lastTwoIndex);
@@ -14,14 +18,31 @@ namespace PassportProcessing.Validators
             {
                 if (measurement == "cm")
                 {
-                    return hgt >= 150 && hgt <= 193;
+                    if (hgt >= 150 && hgt <= 193)
+                    {
+                        base.Validate(passport);
+                    }
+                    else
+                    {
+                        throw new ValidationException($"Invalid hgt value: {value}");
+                    }
                 }
                 else if (measurement == "in")
                 {
-                    return hgt >= 59 && hgt <= 76;
+                    if (hgt >= 59 && hgt <= 76)
+                    {
+                        base.Validate(passport);
+                    }
+                    else
+                    {
+                        throw new ValidationException($"Invalid hgt value: {value}");
+                    }
                 }
             }
-            return false;
+            else
+            {
+                throw new ValidationException($"Invalid hgt value: {value}");
+            }
         }
     }
 }

@@ -1,7 +1,11 @@
-﻿namespace PassportProcessing.Validators
+﻿using System.Collections.Generic;
+
+namespace PassportProcessing.Validators
 {
     public interface IValidator
     {
-        bool Validate(string value);
+        IValidator SetNext(IValidator next);
+
+        void Validate(Dictionary<string, string> passport);
     }
 }

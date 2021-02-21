@@ -1,17 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PassportProcessing.Validators
 {
-    public class IssueYearValidator
+    public class IssueYearValidator : BaseValidator
     {
-        public static bool Validate(string value)
+        public override void Validate(Dictionary<string, string> passport)
         {
+            string key = "iyr";
+            string value = passport[key];
+
             bool success = Int32.TryParse(value, out int iyr);
             if (success)
             {
-                return iyr >= 2010 && iyr <= 2020;
+                if (iyr >= 2010 && iyr <= 2020)
+                {
+                    base.Validate(passport);
+                }
+                else
+                {
+                    throw new ValidationException($"Invalid iyr value: {value}");
+                }
             }
-            return false;
+            else
+            {
+                throw new ValidationException($"Invalid iyr value: {value}");
+            }
         }
     }
 }
